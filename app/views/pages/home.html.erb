@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-container" id="home-container">
+
+  <div class="form-container brand-container">
+    <h1>Form for <strong>brand manager</strong></h1>
+  </div>
+
+  <div class="form-container creator-container">
+    <h1>Form for <strong>content creator</strong></h1>
+  </div>
+
+  <div class="overlay-panel overlay-left">
+    <h1>Slogan for brands</h1>
+    <button class="ghost" id="btnBrand">I'm a brand</button>
+  </div>
+
+  <div class="overlay-panel overlay-right">
+    <h1>Slogan for content creators</h1>
+    <button class="ghost" id="btnCreator">I'm a creator</button>
+  </div>
+
+</div>
+
+<%= javascript_pack_tag 'home' %>
