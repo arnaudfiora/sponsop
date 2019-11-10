@@ -1,21 +1,29 @@
-<div class="home-container" id="home-container">
+<div class="home-container" id="home-banner">
+  <h1>Big picture and/or a few cards to explain all the magic shit we're gonna do</h1>
+  <button id="get-started">Let's get started</button>
+</div>
 
+<div class="home-container">
+
+  <!-- The 2 following forms are hidden by the overlay panels -->
+  <!-- Form for brand managers is on the right of the screen -->
   <div class="form-container brand-container">
     <h1>Form for <strong>brand manager</strong></h1>
   </div>
-
+  <!-- Form for content creators is on the left of the screen -->
   <div class="form-container creator-container">
     <h1>Form for <strong>content creator</strong></h1>
   </div>
 
+  <!-- The overlay panels have a higher z-index and thus appear on top of the forms -->
   <div class="overlay-panel overlay-left">
-    <h1>Slogan for brands</h1>
-    <button class="ghost" id="btnBrand">I'm a brand</button>
+    <h1 style="color: lightgrey">I have a suit god damn it!</h1>
+    <button id="button-brand">I'm a brand</button>
   </div>
 
   <div class="overlay-panel overlay-right">
-    <h1>Slogan for content creators</h1>
-    <button class="ghost" id="btnCreator">I'm a creator</button>
+    <h1 style="color: lightgrey">And I'm a freakin' hipster, yo!</h1>
+    <button id="button-creator">I'm a creator</button>
   </div>
 
 </div>
