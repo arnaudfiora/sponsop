@@ -1,3 +1,7 @@
+// Remove the stickiness of navbar when loading home page
+// window.onload
+
+
 // Make the page scroll to the log-in/sign-up section when clicking on the button
 const startButton = document.getElementById('get-started');
 const homeBanner = document.getElementById('home-banner');
