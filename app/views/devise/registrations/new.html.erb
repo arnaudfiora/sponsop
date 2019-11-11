@@ -1,25 +1,79 @@
-<h2>Sign up</h2>
+<div class="home-container">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <!-- The 2 following forms are hidden by the overlay panels -->
+  <!-- Form for brand managers is on the right of the screen -->
+  <div class="form-container brand-container">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+      <div class="form-inputs">
+        <%= f.input :is_brand,
+                    as: :hidden,
+                    input_html: { :value => true } %>
+        <%= f.input :first_name,
+                    required: true %>
+        <%= f.input :last_name,
+                    required: true %>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :company,
+                    required: true %>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </div>
+  <!-- Form for content creators is on the left of the screen -->
+  <div class="form-container creator-container">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <!-- The overlay panels have a higher z-index and thus appear on top of the forms -->
+  <div class="overlay-panel overlay-left">
+    <h1 style="color: lightgrey">I have a suit god damn it!</h1>
+    <button id="button-brand" >I'm a brand</button>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+  <div class="overlay-panel overlay-right">
+    <h1 style="color: lightgrey">And I'm a freakin' hipster, yo!</h1>
+    <button id="button-creator">I'm a creator</button>
+  </div>
+
+</div>
+
+<%= javascript_pack_tag 'registration' %>
