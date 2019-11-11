@@ -1,0 +1,2 @@
+To add back in navbar line 22
+<img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src='<%= current_user.avatar %>' />
