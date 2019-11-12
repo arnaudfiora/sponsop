@@ -1,5 +1,4 @@
 class CampaignsController < ApplicationController
-
   def new
     @campaign = Campaign.new
     @campaign.build_age
