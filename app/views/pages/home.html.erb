@@ -1,11 +1,6 @@
 <%= render 'shared/navbar' %>
 
-<div class="home-container" id="home-banner">
-  <h1>Big picture and/or a few cards to explain all the magic shit we're gonna do</h1>
-  <button id="get-started">Let's get started</button>
-</div>
-
-<%= link_to "NEW USER", new_user_registration_path %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+<%= link_to "NEW USER", new_user_registration_path, class: 'btn btn-success' %>
+<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 
 <%= javascript_pack_tag 'home' %>

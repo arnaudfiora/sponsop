@@ -2,46 +2,47 @@
 
   <!-- The 2 following forms are hidden by the overlay panels -->
   <!-- Form for brand managers is on the right of the screen -->
-  <div class="form-container brand-container">
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+<div class="form-container brand-container">
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :is_brand,
-                    as: :hidden,
-                    input_html: { :value => true } %>
-        <%= f.input :first_name,
-                    required: true %>
-        <%= f.input :last_name,
-                    required: true %>
-        <%= f.input :email,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :company,
-                    required: true %>
-        <%= f.input :password,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
+    <div class="form-inputs">
+      <%= f.input :is_brand, as: :hidden, input_html: { value: true } %>
+      <%= f.input :first_name,
+                  required: true %>
+      <%= f.input :last_name,
+                  required: true %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :company,
+                  required: true %>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
-    <% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: 'btn btn-primary w-100' %>
+    </div>
 
     <%= render "devise/shared/links" %>
-  </div>
+  <% end %>
+</div>
+
   <!-- Form for content creators is on the left of the screen -->
   <div class="form-container creator-container">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
         <%= f.input :email,
                     required: true,
                     autofocus: true,
@@ -56,11 +57,13 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "Sign up", class: 'btn btn-primary w-100' %>
       </div>
+
+      <%= render "devise/shared/links" %>
     <% end %>
 
-    <%= render "devise/shared/links" %>
+
   </div>
 
   <!-- The overlay panels have a higher z-index and thus appear on top of the forms -->

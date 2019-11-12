@@ -1,2 +1,10 @@
-To add back in navbar line 22
-<img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src='<%= current_user.avatar %>' />
+// FILE USED TO STORE CODE BLOCKS DELETED FROM OTHER PAGES TEMPORARILY
+
+OLD HOME BANNER HTML
+
+<div class="home-container" id="home-banner">
+  <h1>Big picture and/or a few cards to explain all the magic shit we're gonna do</h1>
+  <button id="get-started">Let's get started</button>
+</div>
+
+
