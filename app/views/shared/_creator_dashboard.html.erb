@@ -1,0 +1,22 @@
+<h1>WELCOME TO CREATOR <%= @user.first_name %>'S DASHBOARD</h1>
+<%= link_to "NEW CHANNEL", new_channel_path, class: 'btn btn-primary' %>
+
+<% @user.channels.each do |channel| %>
+  <p><%= channel.name %></p>
+<% end %>
+
+
+<div class="channel-cards-container">
+
+
+  <div class="channel-card">
+
+
+
+
+  </div>
+
+
+
+
+</div>
