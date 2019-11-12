@@ -1,0 +1,19 @@
+  <div class="campaign_form">
+<%= simple_form_for (@campaign) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false %>
+    <%= f.input :begin_date %>
+    <%= f.input :end_date %>
+    <%= f.simple_fields_for :age do |ff| %>
+      <%= ff.input :less_12 %>
+      <%= ff.input :age_12_18 %>
+      <%= ff.input :age_19_25 %>
+      <%= ff.input :age_26_35 %>
+      <%= ff.input :age_36_45 %>
+      <%= ff.input :age_46_55 %>
+      <%= ff.input :age_56_65 %>
+      <%= ff.input :more_65 %>
+    <% end %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+  </div>
