@@ -1,6 +1,16 @@
-.main-form-container {
-  width: 100%;
+.form-wrapper {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-content {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
