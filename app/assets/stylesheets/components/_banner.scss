@@ -1,0 +1,17 @@
+.banner{
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("img-banner.jpg");
+
+}
+
+h1 {
+  color: white;
+}
+
+p{
+  color: white;
+}

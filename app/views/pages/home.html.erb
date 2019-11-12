@@ -1,6 +1,78 @@
-<%= render 'shared/navbar' %>
+<%= render "shared/navbar" %>
 
-<%= link_to "NEW USER", new_user_registration_path, class: 'btn btn-success' %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+<div class="banner">
+  <div class="banner-content text-center">
 
+    <h1>Change your life: learn to code!</h1>
+    <p>Le Wagon brings technical skills to creative people</p>
+    <%= link_to "NEW USER", new_user_registration_path, class: 'btn btn-success' %>
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+  </div>
+</div>
+
+<div class= "features">
+  <div class="container text-center">
+    <h1> features </h1>
+    <div class="row">
+      <div class="column">
+       <div class="card-info">
+        <p>test</p>
+       </div>
+    </div>
+<div class="column">
+       <div class="card-info">
+        <p>test</p>
+       </div>
+    </div>
+    <div class="column">
+       <div class="card-info">
+        <p>test</p>
+       </div>
+    </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container text-center">
+ <div class="title"> <h1> testimonials </h1></div>
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="notification-content">
+    <p><small>14th January</small></p>
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+  <div class="notification-content">
+    <p><small>14th January</small></p>
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+
+<div class="notification">
+  <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
+  <div class="notification-content">
+    <p><small>9th January</small></p>
+    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  </div>
+
+  <div class="notification-actions">
+    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+</div>
+</div>
+
+<hr>
 <%= javascript_pack_tag 'home' %>

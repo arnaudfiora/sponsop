@@ -1,26 +1,12 @@
-.navbar-sponsop {
-  display: flex;
+.navbar-lewagon {
   justify-content: space-between;
-
-  height: 70px;
-  width: 100%;
-  background-color: black;
-
-  .navbar-logo {
-    height: 20px;
-  }
-
-  .navbar-collapse {
-    flex-grow: 0;
-  }
+  background: white;
 }
 
-.transparent {
-  background-color: transparent;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
-.navbar-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
