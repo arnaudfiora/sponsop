@@ -1,4 +1,4 @@
 class Age < ApplicationRecord
-  belongs_to :campaign
-  belongs_to :channel
+  has_one :campaign
+  has_one :channel
 end
