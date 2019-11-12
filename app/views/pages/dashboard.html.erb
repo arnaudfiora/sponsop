@@ -9,7 +9,7 @@
 <p>Email: <%= current_user.email %></p>
 <p>Avatar: <%= current_user.avatar %></p>
 
-<% if current_user.is_brand %>
+<% if @user.is_brand %>
   <%= render 'shared/brand_dashboard' %>
 <% else %>
   <%= render 'shared/creator_dashboard' %>

@@ -21,7 +21,7 @@ class ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
     @channel.user = current_user
     if @channel.save
-      redirect_to dashboard_path # To change to campaign-page when page done
+      redirect_to dashboard_path
     else
       render :new
     end

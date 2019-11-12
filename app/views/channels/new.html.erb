@@ -5,7 +5,8 @@
 <div class="form-content">
   <%= simple_form_for (@channel) do |f| %>
     <%= f.input :name %>
-    <%= f.input :url %>
+    <%= f.input :url, label: 'URL' %>
+    <h2>Information about your audience</h2>
     <%= f.input :gender, :as => :select, :collection => Channel::GENDER, include_blank: false %>
     <%= f.simple_fields_for :age do |ff| %>
       <%= ff.input :less_12, label: "Less than 12" %>
