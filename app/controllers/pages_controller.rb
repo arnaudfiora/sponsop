@@ -5,5 +5,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @campaigns = Campaign.all.where(user: current_user)
   end
 end
