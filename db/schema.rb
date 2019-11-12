@@ -10,10 +10,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_162652) do
+ActiveRecord::Schema.define(version: 2019_11_12_133255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "less_12", default: false
+    t.boolean "age_12_18", default: false
+    t.boolean "age_19_25", default: false
+    t.boolean "age_26_35", default: false
+    t.boolean "age_36_45", default: false
+    t.boolean "age_46_55", default: false
+    t.boolean "age_56_65", default: false
+    t.boolean "more_65", default: false
+  end
+
+  create_table "campaign_interests", force: :cascade do |t|
+    t.bigint "campaign_id"
+    t.bigint "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_campaign_interests_on_campaign_id"
+    t.index ["interest_id"], name: "index_campaign_interests_on_interest_id"
+  end
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "name"
+    t.string "gender"
+    t.date "begin_date"
+    t.date "end_date"
+    t.bigint "user_id"
+    t.bigint "age_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["age_id"], name: "index_campaigns_on_age_id"
+    t.index ["user_id"], name: "index_campaigns_on_user_id"
+  end
+
+  create_table "channel_interests", force: :cascade do |t|
+    t.bigint "channel_id"
+    t.bigint "interest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_channel_interests_on_channel_id"
+    t.index ["interest_id"], name: "index_channel_interests_on_interest_id"
+  end
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.string "gender"
+    t.bigint "user_id"
+    t.bigint "age_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["age_id"], name: "index_channels_on_age_id"
+    t.index ["user_id"], name: "index_channels_on_user_id"
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "last_name"
