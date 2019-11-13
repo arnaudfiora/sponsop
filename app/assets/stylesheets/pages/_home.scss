@@ -1,8 +1,61 @@
-
 .banner {
   width: auto;
   height: 650px;
+
+  h1 {
+    font-size: 88px;
+  }
+
+  p {
+    font-size: 32px;
+    width: 40%;
+  }
 }
+
+.card-container {
+  h2 {
+    font-size: 40px;
+    padding: 30px;
+    margin: 0;
+  }
+
+  .card-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 300px;
+    padding: 15px 5px;
+    // border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    .card-home-icon {
+      height: 112px;
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 64px;
+        width: 64px;
+      }
+    }
+
+    .card-home-content {
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+        text-align: center;
+        padding: 0 15px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
 
 .features_brand{
   padding: 50px 25px;

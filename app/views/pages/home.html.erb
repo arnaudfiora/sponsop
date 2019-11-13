@@ -1,64 +1,60 @@
 <%= render 'shared/navbar' %>
-<!--<%= link_to "NEW USER", new_user_registration_path, class: 'btn btn-success' %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 
-<%= javascript_pack_tag 'home' %>
--->
-
-
-
-  <div class="banner" style=" background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1556764900-fa065610b0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
-    <div class="container">
-      <div class="title">
-      <h1>Sponsop</h1>
-      </div>
-
-      <div class="content">
-      <p> influencer marketing for Everyone </p>
-      </div>
-    </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1556764900-fa065610b0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1>SponsOp</h1>
+    <p> Connecting brands and content creators to develop sponsoring relationships.</p>
   </div>
+</div>
 
+<div class="container card-container text-center">
+  <h2> As a brand representative </h2>
 
-    <div class="container">
-      <div class="features_brand">
-      <h3> Brand Feature </h3>
-      </div>
-    <div class="row">
+  <div class="row justify-content-center">
 
-      <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/wired/64/000000/search.png">
         </div>
-        <h3> Discovery & Transparency </h3>
-        <p> Find the most relevant influencers for your
-        brand or company with complete transparency on their profile (audience statistics, portfolio, past reviews).
-        </p>
+        <div class="card-home-content">
+          <h3>Transparency</h3>
+          <p>Find the <strong>most relevant</strong>  content creators for your
+          brand with complete <strong>transparency</strong> on their profile (audience statistics, portfolio, past reviews, etc.)</p>
         </div>
-
-
-        <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
-          <img src="https://img.icons8.com/wired/64/000000/handshake.png">
-         </div>
-          <h3> Collaborate </h3>
-          <p> Discuss directly with the influencer and agree on the terms of the collaboration.
-          </p>
-        </div>
-
-
-        <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
-          <img src="https://img.icons8.com/wired/64/000000/statistics.png">
-        </div>
-          <h3> Track your growth</h3>
-          <p> Follow the performance of all the publictions made by all influencers you are working with in real time (impressions, likes, comments, etc.)
-          </p>
-
       </div>
     </div>
+
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
+          <img src="https://img.icons8.com/wired/64/000000/handshake.png">
+        </div>
+        <div class="card-home-content">
+          <h3>Collaboration</h3>
+          <p>Get in touch <strong>directly</strong> with the content creators of your choice, agree on the terms of the collaboration, and <strong>close deals</strong> faster than ever</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
+          <img src="https://img.icons8.com/wired/64/000000/statistics.png">
+        </div>
+        <div class="card-home-content">
+          <h3>Tracking</h3>
+          <p>Assess the <strong>impact</strong> of your different partnerships in real time (impressions, likes, comments, etc.) and track the <strong>conversion rate</strong> of your advertising campaigns</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <hr>
 
+<div class="container creator-container">
   <div class="our_brands">
     <div class="static-container">
       <h3>A few brands we work with</h3>
@@ -178,3 +174,4 @@
 
 <%= render 'shared/footer' %>
 
+<%= javascript_pack_tag 'home' %>
