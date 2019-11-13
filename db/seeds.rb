@@ -162,7 +162,7 @@ gender = ['Male', 'Female', 'Both']
 
 30.times do
   Channel.create!(
-    name: Faker::Currency,
+    name: Faker::Currency.name,
     url: Faker::Internet.domain_name,
     gender: gender.sample,
     user: User.where(email: 'arnaudcreator@sponsop.be').first,
