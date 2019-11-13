@@ -72,15 +72,30 @@
 
 <ol>
   <% second_filter.each do |result| %>
-    <li><%= result.name %></li>
+    <li><%= result.name %>
+      <% result.interests.each do |interest| %>
+        <span><%= interest.name %></span>
+      <% end %>
+    </li>
   <% end %>
 </ol>
 
+<!-- Third filter : interests - Flexible -->
+<h3>third filter</h3>
 
+<% third_filter = [] %>
 
+<% second_filter.each do |channel| %>
+  <% unless (@campaign.interests & channel.interests)[0].nil? %>
+    <% third_filter << channel %>
+  <% end %>
+<% end %>
 
-
-
+<ol>
+  <% third_filter.each do |channel| %>
+    <li><%= channel.name %></li>
+  <% end %>
+</ol>
 
 
 
