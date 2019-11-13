@@ -4,7 +4,11 @@
 <h1>WILL SOON BE DELETED TO RENDER RESPECTIVE DASHBOARDS</h1>
 <p>First name: <%= current_user.first_name %></p>
 <p>Last name: <%= current_user.last_name %></p>
-<p>Is brand? <%= current_user.is_brand %></p>
+<% if current_user.is_brand %>
+  <p style="color: red; font-weight: bold">BRAND</p>
+<% else %>
+  <p style="color: red; font-weight: bold">CREATOR</p>
+<% end %>
 <p>Company: <%= current_user.company %></p>
 <p>Email: <%= current_user.email %></p>
 <p>Avatar: <%= current_user.avatar %></p>
