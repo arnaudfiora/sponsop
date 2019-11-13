@@ -1,0 +1,30 @@
+.channel-form-wrapper {
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.channel-form-content {
+  width: 900px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: 24px;
+    text-align: center;
+    color: darkgrey;
+    margin: 15px 0px;
+  }
+}
