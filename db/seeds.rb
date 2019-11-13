@@ -102,3 +102,76 @@ puts "4 ADMIN brands added"
 
 
 #--------------------#
+
+#----- INTERESTS -----#
+puts "About to add some interests"
+
+attributes = [
+  { name: 'Mode' },
+  { name: 'Travel' },
+  { name: 'Technology' },
+  { name: 'Beauty' },
+  { name: 'Sports' },
+  { name: 'Food' },
+  { name: 'Healthy' },
+  { name: 'Sustainability' },
+  { name: 'Mindfulness' },
+  { name: 'Lifestyle' },
+  { name: 'Art' },
+  { name: 'Meditation' },
+  { name: 'Automotive' },
+  { name: 'Fitness' },
+  { name: 'Architecture' },
+  { name: 'Music' },
+  { name: 'Movies' },
+  { name: 'Games' },
+  { name: 'Relationship' },
+  { name: 'Philosophy' },
+  { name: 'Animals' },
+  { name: 'Family' }
+]
+
+Interest.create!(attributes)
+
+puts "20 interests added"
+#--------------------#
+
+#----- AGES -----#
+puts "About to add ages"
+
+truefalse = [true, false]
+
+5.times do
+  Age.create!(
+    less_12: truefalse.sample,
+    age_12_18: truefalse.sample,
+    age_19_25: truefalse.sample,
+    age_26_35: truefalse.sample,
+    age_36_45: truefalse.sample,
+    age_46_55: truefalse.sample,
+    age_56_65: truefalse.sample,
+    more_65: truefalse.sample
+  )
+end
+
+puts "5 ages added"
+#--------------------#
+
+#----- CHANNELS -----#
+puts "About to add channels to Arnaud Creator"
+
+gender = ['Male', 'Female', 'Both']
+
+30.times do
+  Channel.create!(
+    name: Faker::Currency.name,
+    url: Faker::Internet.domain_name,
+    gender: gender.sample,
+    user: User.where(email: 'arnaudcreator@sponsop.be').first,
+    age: Age.all.sample,
+    interests: Interest.all.sample(3)
+  )
+end
+
+puts "30 channels added to Arnaud Creator"
+#--------------------#
