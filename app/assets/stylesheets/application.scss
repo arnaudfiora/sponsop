@@ -16,3 +16,7 @@
 .element-hidden {
   display: none;
 }
+.channel-interests {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+}

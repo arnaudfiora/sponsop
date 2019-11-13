@@ -9,6 +9,7 @@ class CampaignsController < ApplicationController
   end
 
   def create
+
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
@@ -24,6 +25,6 @@ class CampaignsController < ApplicationController
 
   private
     def campaign_params
-      params.require(:campaign).permit(:name, :begin_date, :end_date, :gender, age_attributes: {})
+      params.require(:campaign).permit(:name, :begin_date, :end_date, :gender,interest_ids: [], age_attributes: {})
     end
 end
