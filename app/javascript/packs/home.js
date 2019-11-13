@@ -36,7 +36,7 @@ window.addEventListener('scroll', (event) => {
 // Adding the scrolling text in the banner
 var typed = new Typed('.type', {
   strings: ["Sponsop"],
-  typeSpeed: 35,
+  typeSpeed: 130,
   backSpeed: 35,
   backDelay: 1000,
   loop: true,
