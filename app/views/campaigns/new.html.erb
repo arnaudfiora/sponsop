@@ -1,20 +1,39 @@
-  <div class="campaign_form">
-<%= simple_form_for (@campaign) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false %>
-    <%= f.input :begin_date %>
-    <%= f.input :end_date %>
-    <%= f.association :interests,  as: :check_boxes, include_blank: false, label: 'What is your content about? Select as many as you want'%>
-    <%= f.simple_fields_for :age do |ff| %>
-      <%= ff.input :less_12 %>
-      <%= ff.input :age_12_18 %>
-      <%= ff.input :age_19_25 %>
-      <%= ff.input :age_26_35 %>
-      <%= ff.input :age_36_45 %>
-      <%= ff.input :age_46_55 %>
-      <%= ff.input :age_56_65 %>
-      <%= ff.input :more_65 %>
+<div class="channel-form-wrapper">
+  <div class="channel-form-content">
+
+    <h1>Create a new campaign</h1>
+
+    <%= simple_form_for (@campaign) do |f| %>
+
+      <h3>About your new campaign</h3>
+
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :begin_date %>
+      <%= f.input :end_date %>
+
+      <h3>Who are your targetted consumers?</h3>
+      <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false %>
+
+      <div class="form-group">
+        <label class="required">Age range(s)<abbr title="required">*</abbr> </label>
+        <%= f.simple_fields_for :age do |ff| %>
+          <%= ff.input :less_12 %>
+          <%= ff.input :age_12_18 %>
+          <%= ff.input :age_19_25 %>
+          <%= ff.input :age_26_35 %>
+          <%= ff.input :age_36_45 %>
+          <%= ff.input :age_46_55 %>
+          <%= ff.input :age_56_65 %>
+          <%= ff.input :more_65 %>
+        <% end %>
+      </div>
+
+      <%= f.association :interests,  as: :check_boxes, include_blank: false, label: "Your targetted consumers are interested about (select up to 5):"%>
+
+      <%= f.submit "Submit", class: "btn btn-primary w-100" %>
+      <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-100 my-2" %>
     <% end %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
   </div>
+
+</div>
