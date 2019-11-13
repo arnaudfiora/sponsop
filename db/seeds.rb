@@ -99,4 +99,6 @@ attributes = [{
 User.create!(attributes)
 
 puts "4 ADMIN brands added"
+
+
 #--------------------#
