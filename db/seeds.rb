@@ -1,7 +1,102 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+# User.destroy_all
+# puts "Destroyed all users"
+
+#----- CREATORS -----#
+# Admin creators
+puts "About to add some ADMIN creators... "
+
+attributes = [{
+  last_name: 'Thiran',
+  first_name: 'Harold',
+  email: 'haroldcreator@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/harold9898',
+  password: 'sponsop'
+  },
+  {
+  last_name: 'Fiora',
+  first_name: 'Arnaud',
+  email: 'arnaudcreator@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/arnaudfiora',
+  password: 'sponsop',
+  },
+  {
+  last_name: 'de Streel',
+  first_name: 'Eloïse',
+  email: 'eloisecreator@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/elo29597',
+  password: 'sponsop',
+  },
+  {
+  last_name: 'Di Filippo',
+  first_name: 'Dylan',
+  email: 'dylancreator@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/dylandifilippo',
+  password: 'sponsop',
+  }]
+
+User.create!(attributes)
+
+puts "4 ADMIN creators added"
+
+# puts "About to add some creators... "
+
+# 50.times do
+#   User.create!(
+#     last_name: Faker::Name.unique.last_name,
+#     first_name: Faker::Name.unique.first_name,
+#     password: "1234567",
+#     email: Faker::Internet.unique.email,
+#     avatar: Faker::Avatar.image
+#   )
+# end
+
+# puts "5O creators added"
+#--------------------#
+
+#----- BRANDS -----#
+# Admin brands
+puts "About to add some ADMIN brands... "
+
+attributes = [{
+  last_name: 'Thiran',
+  first_name: 'Harold',
+  email: 'haroldbrand@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/harold9898',
+  is_brand: true,
+  company: 'Unilever',
+  password: 'sponsop'
+  },
+  {
+  last_name: 'Fiora',
+  first_name: 'Arnaud',
+  email: 'arnaudbrand@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/arnaudfiora',
+  is_brand: true,
+  password: 'sponsop',
+  company: 'Veja'
+  },
+  {
+  last_name: 'de Streel',
+  first_name: 'Eloïse',
+  email: 'eloisebrand@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/elo29597',
+  is_brand: true,
+  password: 'sponsop',
+  company: 'Disney'
+  },
+  {
+  last_name: 'Di Filippo',
+  first_name: 'Dylan',
+  email: 'dylanbrand@sponsop.be',
+  avatar: 'https://avatars.githubusercontent.com/dylandifilippo',
+  is_brand: true,
+  password: 'sponsop',
+  company: 'Levis'
+  }]
+
+User.create!(attributes)
+
+puts "4 ADMIN brands added"
+#--------------------#

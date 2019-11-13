@@ -1,0 +1,9 @@
+<h1>WELCOME TO BRAND DASHBOARD</h1>
+  <p>
+  <% @campaigns.each do |campaign| %>
+  <%= campaign.name %>
+  <% end %>
+  </p>
+<%= link_to "NEW CAMPAIGN", new_campaign_path, class: 'btn btn-primary' %>
+
+
