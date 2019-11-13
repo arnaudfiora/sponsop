@@ -1,180 +1,167 @@
 <%= render 'shared/navbar' %>
-<!--<%= link_to "NEW USER", new_user_registration_path, class: 'btn btn-success' %>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 
-<%= javascript_pack_tag 'home' %>
--->
-
-
-
-  <div class="banner" style=" background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1556764900-fa065610b0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
-    <div class="container">
-      <div class="title">
-      <h1>Sponsop</h1>
-      </div>
-
-      <div class="content">
-      <p> influencer marketing for Everyone </p>
-      </div>
-    </div>
+<div class="banner" id="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1556764900-fa065610b0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1><span class="type"></span></h1>
+    <p>Connecting brands and content creators</p>
+    <button id="learn-more-button">Learn more</button>
   </div>
+</div>
 
+<div class="container cards-container text-center">
+  <h2> As a brand representative </h2>
 
-    <div class="container">
-      <div class="features_brand">
-      <h3> Brand Feature </h3>
-      </div>
-    <div class="row">
+  <div class="row justify-content-center">
 
-      <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/wired/64/000000/search.png">
         </div>
-        <h3> Discovery & Transparency </h3>
-        <p> Find the most relevant influencers for your
-        brand or company with complete transparency on their profile (audience statistics, portfolio, past reviews).
-        </p>
+        <div class="card-home-content">
+          <h3>Transparency</h3>
+          <p>Find the <strong>most relevant</strong>  content creators for your
+          brand with complete <strong>transparency</strong> on their profile (audience statistics, portfolio, past reviews, etc.)</p>
         </div>
+      </div>
+    </div>
 
-
-        <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/wired/64/000000/handshake.png">
-         </div>
-          <h3> Collaborate </h3>
-          <p> Discuss directly with the influencer and agree on the terms of the collaboration.
-          </p>
         </div>
+        <div class="card-home-content">
+          <h3>Collaboration</h3>
+          <p>Get in touch <strong>directly</strong> with the content creators of your choice, agree on the terms of the collaboration, and <strong>close deals</strong> faster than ever</p>
+        </div>
+      </div>
+    </div>
 
-
-        <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/wired/64/000000/statistics.png">
         </div>
-          <h3> Track your growth</h3>
-          <p> Follow the performance of all the publictions made by all influencers you are working with in real time (impressions, likes, comments, etc.)
-          </p>
-
+        <div class="card-home-content">
+          <h3>Tracking</h3>
+          <p>Assess the <strong>impact</strong> of your different partnerships in real time (impressions, likes, comments, etc.) and track the <strong>conversion rate</strong> of your advertising campaigns</p>
+        </div>
       </div>
     </div>
-<hr>
 
-  <div class="our_brands">
-    <div class="static-container">
-      <h3>A few brands we work with</h3>
-      <div class="logo-list">
-
-    <div style="transition-delay: 100ms;">
-    <img class="picture_logo" src="https://dl.be/uploads/2019/08/icon-512x512.png"></div>
-    <div style="transition-delay: 200ms;">
-    <img class= "picture_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/ICE-WATCH-logo.svg/315px-ICE-WATCH-logo.svg.png" alt="canon">
-    </div>
-    <div style="transition-delay: 300ms;">
-    <img class= "picture_logo" src="https://www.schoenenverduyn.be/Cached/108052/resize/2000x400/Veja.png" alt="canon" alt="sony">
-    </div>
-    <div style="transition-delay: 400ms;">
-    <img class= "picture_logo"  src="https://seeklogo.com/images/C/Cote_d_Or-logo-29637A7AF2-seeklogo.com.png" alt="canon">
-      </div>
-      <div style="transition-delay: 400ms;">
-    <img class= "picture_logo"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nivea_Logo.png/776px-Nivea_Logo.png" alt="canon">
-      </div>
-    </div>
   </div>
+</div>
 
 <hr>
 
- <div class="features_creators">
+<div class="container partners-container text-center">
+  <h2>They trust SponsOp</h2>
 
-  <h3> Creators feature's </h3>
+  <div class="brand-logo-container">
+    <img alt="#" src="https://dl.be/uploads/2019/08/icon-512x512.png">
+    <img alt="#" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/ICE-WATCH-logo.svg/315px-ICE-WATCH-logo.svg.png">
+    <img alt="#" src="https://www.schoenenverduyn.be/Cached/108052/resize/2000x400/Veja.png">
+    <img alt="#" src="https://seeklogo.com/images/C/Cote_d_Or-logo-29637A7AF2-seeklogo.com.png">
+    <img alt="#" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nivea_Logo.png/776px-Nivea_Logo.png">
   </div>
+</div>
 
-    <div class="row">
-      <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
+<hr>
+
+<div class="container cards-container text-center">
+  <h2> As a content creator </h2>
+
+  <div class="row justify-content-center">
+
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/dotty/80/000000/money.png">
         </div>
-        <h3> Earn Money </h3>
-        <p> Get contacted by the most relevant brands for your audience with complete transparency on what they have to offer ( campaign, audience, portfolio, reviews)
-        </p>
+        <div class="card-home-content">
+          <h3> Earn Money </h3>
+          <p> Get contacted by the most relevant brands for your audience with complete transparency on what they have to offer ( campaign, audience, portfolio, reviews)</p>
+        </div>
       </div>
+    </div>
 
-      <div class="col-sm-4" style="transition-delay: 250ms;">
-         <div class="icon">
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/wired/64/000000/statistics.png">
-         </div>
-         <h3> collaborate </h3>
-          <p> Discuss directly with the brand and agree on the terms of the collaboration.
-          </p>
+        </div>
+        <div class="card-home-content">
+          <h3> Collaborate </h3>
+          <p> Discuss directly with the brand and agree on the terms of the collaboration</p>
+        </div>
       </div>
+    </div>
 
-
-      <div class="col-sm-4" style="transition-delay: 250ms;">
-        <div class="icon">
+    <div class="col-sm-3">
+      <div class="card-home">
+        <div class="card-home-icon">
           <img src="https://img.icons8.com/ios/80/000000/person-growth.png">
         </div>
+        <div class="card-home-content">
           <h3> Proffesional growth </h3>
           <p> Turn your passion into a business by connecting you with brands looking to create amazing branded content.</p>
+        </div>
       </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<div class="container testimonials-container">
+  <h2 class="text-center">What they say about SponsOp</h2>
+
+  <div class="testimonial">
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large avatar-bordered" />
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Antoine</strong></p>
+      <p>Product Manager at Côte d’Or</p>
+      <p style="color:grey">« SponsOp was the platform we were waiting for, we connected with 10 content creators and our Summer 2019 Campaign in Rome went crazy! The possibility to connect directly with creators sharing the same audience as us made a drastic difference in the conversion rate of our advertising campaign »</p>
     </div>
   </div>
 
-<hr>
-  <div class="reviews">
-        <h3> they recomend us </h3>
-      </div>
-  <div class="testimonials">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-      <div class="notification-content p-2">
-      <h5>Antoine - Product Manager at Côte d’Or</h5>
-      <p>SponsOp was the deal we were waiting for, we reached 10 different influencer and our summer 2019 campaign in Rome went crazy!</p>
-      </div>
+  <div class="testimonial">
+    <img src='https://i4.sndcdn.com/artworks-000161972087-ges84i-t120x120.jpg' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Geraldine</strong></p>
+      <p>CEO at Ice Watch</p>
+      <p style="color:grey">« Thanks to SponsOp we exceeded our marketings goals for the semester. The clear interface and the easiness to navigate through the most relevant content creators for Ice Watch is the real added value of this platform »</p>
+    </div>
+  </div>
 
-</div>
-
-<div class="testimonials">
-  <img src='https://i4.sndcdn.com/artworks-000161972087-ges84i-t120x120.jpg' class="avatar-large"/>
-  <div class="notification-content p-2">
-    <h5>Geraldine - CEO at ICE WATCH</h5>
-    <p>Thanks to SponsOp we reached our marketings goals and thanks to the clear interface we have a clear view of how our campaigns re growing.</p>
+  <div class="testimonial">
+    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Arnaut</strong></p>
+      <p>Shoes Influencer</p>
+      <p style="color:grey">« With SponsOp I paired up with Veja for their last shoe collection and everything went smooth. I set my post rate, they accepted, they sent me their items and I shared it with my community, and everybody loved it »</p>
+    </div>
   </div>
 </div>
 
+<!-- <div class="container about-container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="video"></div>
+    </div>
 
-  <div class="testimonials">
-  <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
-  <div class="notification-content p-2">
-    <h5>Arnaut - Shoes Influencer</h5>
-    <p>With SponsOp I paired up with Veja for their last shoe collection and everything went smooth. I set my post rate, they accepted, they sent me their items and I shared it with my community.</p>
+    <div class="col-sm-4">
+      <div class="video"></div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="video"></div>
+    </div>
   </div>
-</div>
-
-</div>
-
-
-  <div class="about">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="video">
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="video">
-        </div>
-      </div>
-
-      <div class="col-sm-4">
-        <div class="video">
-        </div>
-
-      </div>
-  </div>
-
-
-</div>
-  </div>
-
-</div>
+</div> -->
 
 <%= render 'shared/footer' %>
 
+<%= javascript_pack_tag 'home' %>
