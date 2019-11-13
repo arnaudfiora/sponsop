@@ -1,11 +1,4 @@
 class ChannelsController < ApplicationController
-  # CHANNEL MODEL
-  # t.string "name"
-  # t.string "url"
-  # t.string "gender"
-  # t.bigint "user_id"
-  # t.bigint "age_id"
-
   # def index
   # end
 
