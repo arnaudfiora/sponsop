@@ -12,13 +12,13 @@
   }
 }
 
-.card-container {
-  h2 {
-    font-size: 40px;
-    padding: 30px;
-    margin: 0;
-  }
+h2 {
+  font-size: 40px;
+  padding: 30px;
+  margin: 0;
+}
 
+.card-container {
   .card-home {
     display: flex;
     flex-direction: column;
@@ -54,6 +54,25 @@
     }
   }
 }
+
+.partners-container {
+  .brand-logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+
+
+
+
+
 
 
 
