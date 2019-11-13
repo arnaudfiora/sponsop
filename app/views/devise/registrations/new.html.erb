@@ -3,6 +3,7 @@
   <!-- The 2 following forms are hidden by the overlay panels -->
   <!-- Form for brand managers is on the right of the screen -->
 <div class="form-container brand-container">
+  <h1>Sign up as a brand</h1>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
@@ -37,6 +38,7 @@
 
   <!-- Form for content creators is on the left of the screen -->
   <div class="form-container creator-container">
+    <h1>Sign up as a content creator</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 

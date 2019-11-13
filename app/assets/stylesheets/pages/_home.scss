@@ -1,12 +1,7 @@
-h2 {
-  font-size: 40px;
-  padding: 30px;
-  margin: 0;
-}
-
 .banner {
   width: auto;
-  height: 650px;
+  height: 800px;
+  margin-top: -70px;
 
   h1 {
     font-size: 88px;
@@ -15,7 +10,14 @@ h2 {
   p {
     font-size: 32px;
     width: 40%;
+    padding: 0;
   }
+}
+
+.container h2 {
+  font-size: 40px;
+  padding: 30px;
+  margin: 0;
 }
 
 .cards-container {
@@ -28,6 +30,7 @@ h2 {
     padding: 15px 5px;
     // border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: white;
 
     .card-home-icon {
       height: 112px;
@@ -70,33 +73,28 @@ h2 {
 
 .testimonials-container
 
-
-
-
-
 .testimonial {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border: 1px solid rgb(235,235,235);
+
   display: flex;
   align-items: center;
-  background: white;
-  border: 1px solid rgb(235,235,235);
-  padding: 0 25px;
-  padding-top: 15px;
+
   margin-bottom: 8px;
-  border-radius: 20px;
-  box-shadow: 5px 2px 2px;
-}
+  padding: 8px 16px;
 
-.notification .notification-content {
-  flex-grow: 1;
-  padding: 0 24px;
-}
+  .testimonial-content {
+    flex-grow: 1;
+    padding: 0 24px;
 
-.notification p {
-  margin: 0;
-  line-height: 1.4;
-}
+    p {
+      margin: 0;
+      line-height: 1.4;
+    }
 
-.notification small {
-  color: #999999;
-  font-weight: bold;
+    small {
+      color: #999999;
+    }
+  }
 }

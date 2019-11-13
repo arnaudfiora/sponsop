@@ -1,9 +1,10 @@
 <%= render 'shared/navbar' %>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1556764900-fa065610b0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+<div class="banner" id="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1556764900-fa065610b0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
   <div class="container">
-    <h1>SponsOp</h1>
+    <h1><span class="type"></span></h1>
     <p>Connecting brands and content creators</p>
+    <button id="learn-more-button">Learn more</button>
   </div>
 </div>
 
@@ -114,30 +115,33 @@
 
 <hr>
 
-<div class="container testimonials-container text-center">
-  <h2> What they say about SponsOp </h2>
+<div class="container testimonials-container">
+  <h2 class="text-center">What they say about SponsOp</h2>
 
   <div class="testimonial">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content p-2">
-      <h5>Antoine - Product Manager at Côte d’Or</h5>
-      <p>SponsOp was the platform we were waiting for, we connected with 10 content creators and our Summer 2019 Campaign in Rome went crazy! The possibility to connect directly with creators sharing the same audience as us made a drastic difference in the conversion rate of our advertising campaign.</p>
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large avatar-bordered" />
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Antoine</strong></p>
+      <p>Product Manager at Côte d’Or</p>
+      <p style="color:grey">« SponsOp was the platform we were waiting for, we connected with 10 content creators and our Summer 2019 Campaign in Rome went crazy! The possibility to connect directly with creators sharing the same audience as us made a drastic difference in the conversion rate of our advertising campaign »</p>
     </div>
   </div>
 
   <div class="testimonial">
-    <img src='https://i4.sndcdn.com/artworks-000161972087-ges84i-t120x120.jpg' class="avatar-large"/>
-    <div class="notification-content p-2">
-      <h5>Geraldine - CEO at ICE WATCH</h5>
-      <p>Thanks to SponsOp we exceeded our marketings goals for the semester. The clear interface and the easiness to navigate through the most relevant content creators for Ice Watch is the real added value of this platform.</p>
+    <img src='https://i4.sndcdn.com/artworks-000161972087-ges84i-t120x120.jpg' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Geraldine</strong></p>
+      <p>CEO at Ice Watch</p>
+      <p style="color:grey">« Thanks to SponsOp we exceeded our marketings goals for the semester. The clear interface and the easiness to navigate through the most relevant content creators for Ice Watch is the real added value of this platform »</p>
     </div>
   </div>
 
   <div class="testimonial">
-    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
-    <div class="notification-content p-2">
-      <h5>Arnaut - Shoes Influencer</h5>
-      <p>With SponsOp I paired up with Veja for their last shoe collection and everything went smooth. I set my post rate, they accepted, they sent me their items and I shared it with my community, and everybody loved it.</p>
+    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Arnaut</strong></p>
+      <p>Shoes Influencer</p>
+      <p style="color:grey">« With SponsOp I paired up with Veja for their last shoe collection and everything went smooth. I set my post rate, they accepted, they sent me their items and I shared it with my community, and everybody loved it »</p>
     </div>
   </div>
 </div>
