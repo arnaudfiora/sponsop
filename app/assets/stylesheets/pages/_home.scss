@@ -1,3 +1,9 @@
+h2 {
+  font-size: 40px;
+  padding: 30px;
+  margin: 0;
+}
+
 .banner {
   width: auto;
   height: 650px;
@@ -12,13 +18,7 @@
   }
 }
 
-h2 {
-  font-size: 40px;
-  padding: 30px;
-  margin: 0;
-}
-
-.card-container {
+.cards-container {
   .card-home {
     display: flex;
     flex-direction: column;
@@ -68,25 +68,13 @@ h2 {
   }
 }
 
+.testimonials-container
 
 
 
 
 
-
-
-
-.features_brand{
-  padding: 50px 25px;
-}
-
-.features_brand h3{
-  text-align: center;
-  font-size: 38px;
-}
-
-
-.testimonials {
+.testimonial {
   display: flex;
   align-items: center;
   background: white;
@@ -111,67 +99,4 @@ h2 {
 .notification small {
   color: #999999;
   font-weight: bold;
-}
-.notification .notification-actions {
-  opacity: 0;
-  display: flex;
-  transition: ease .3s;
-}
-
-.notification:hover .notification-actions {
-  opacity: 1;
-}
-
-.notification .notification-actions a {
-  color: #999999;
-  margin-left: 16px;
-  font-size: 14px;
-}
-
-.notification .notification-actions a:hover {
-  color: #555555;
-}
-
-
-.picture_logo{
-  width: 140px;
-  text-align: center;
-}
-
-.logo-list {
-  display: grid;
-  padding-top: 70px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-text-align: center;
-}
-
-.our_brands{
-  padding: 0 25px;
-}
-
-.static-container{
-  padding-bottom: 50px;
-}
-
-.static-container h3{
-  text-align: center;
-  font-size: 38px;
-}
-
-.features_creators h3{
-  text-align: center;
-  padding-bottom: 40px;
-  font-size: 38px;
-}
-
-.reviews h3{
-  text-align: center;
-  font-size: 38px;
-  padding-bottom: 50px;
-
-}
-
-.icon{
-  height: 80px;
-  width: 80px;
 }
