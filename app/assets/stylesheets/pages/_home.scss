@@ -49,6 +49,8 @@
 }
 
 .cards-container {
+  min-height: 450px;
+
   .card-home {
     display: flex;
     flex-direction: column;
@@ -87,10 +89,13 @@
 }
 
 .partners-container {
+  min-height: 450px;
+
   .brand-logo-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 30px;
   }
 
   img {
