@@ -176,7 +176,7 @@ require 'open-uri'
 # puts "30 channels added to Arnaud Creator"
 # #--------------------#
 
-# USER YOUTUBE 1
+# USER INSTAGRAM 1
 user = User.create!(
   last_name: #FAKER
   first_name: #FAKER,
@@ -185,6 +185,8 @@ user = User.create!(
   password: 'sponsop' # OK
   )
 
+# Add Instagram influencers
+#0
 Channel.create!(
   name: "jannid",
   url: "https://www.instagram.com/jannid/",
@@ -214,7 +216,7 @@ Channel.create!(
   age: Age.all.sample, #OK
   interests: Interest.all.sample(3) #OK
   )
--------
+
 
 Channel.create!(
   name: "jessiekass",
@@ -273,7 +275,7 @@ Channel.create!(
   age: Age.all.sample, #OK
   interests: Interest.all.sample(3) #OK
   )
--------
+#10
 
 Channel.create!(
   name: "simplykennedy_",
@@ -316,7 +318,6 @@ Channel.create!(
   interests: Interest.all.sample(3) #OK
   )
 
-------
 Channel.create!(
   name: "akiniko",
   url: "https://www.instagram.com/akiniko/",
@@ -357,8 +358,8 @@ Channel.create!(
   age: Age.all.sample, #OK
   interests: Interest.all.sample(3) #OK
   )
+#20
 
-------------
 
 Channel.create!(
   name: "juliahengel",
@@ -401,9 +402,6 @@ Channel.create!(
   interests: Interest.all.sample(3) #OK
   )
 
-
------------
-
 Channel.create!(
   name: "benlowy",
   url: "https://www.instagram.com/benlowy/",
@@ -444,7 +442,7 @@ Channel.create!(
   age: Age.all.sample, #OK
   interests: Interest.all.sample(3) #OK
   )
----------------
+# 30
 
 Channel.create!(
   name: "travelbabbo",
@@ -487,7 +485,7 @@ Channel.create!(
   interests: Interest.all.sample(3) #OK
   )
 
---------------
+#40
 
 Channel.create!(
   name: "jamieoliver",
@@ -497,3 +495,380 @@ Channel.create!(
   age: Age.all.sample, #OK
   interests: Interest.all.sample(3) #OK
   )
+Channel.create!(
+  name: "les petites pestes",
+  url: "https://www.instagram.com/lespetitespestes/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "avikoren",
+  url: "https://www.instagram.com/avikoren/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "gaelle_vp",
+  url: "https://www.instagram.com/gaelle_vp//",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "audreycosty",
+  url: "https://www.instagram.com/audreycosty/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+#50
+
+
+Channel.create!(
+  name: "milkywaysblueyes",
+  url: "https://www.instagram.com/milkywaysblueyes/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "bruxellesfood",
+  url: "https://www.instagram.com/bruxellesfood/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "bruxelles.foodguide",
+  url: "https://www.instagram.com/bruxelles.foodguide/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "bonjourgeorges",
+  url: "https://www.instagram.com/bonjourgeorges/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "earthyandy",
+  url: "https://www.instagram.com/earthyandy/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+
+#60
+
+Channel.create!(
+  name: "jennaminnie",
+  url: "https://www.instagram.com/jennaminnie/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "gaellegd",
+  url: "https://www.instagram.com/gaellegd/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "aurelievandaelen",
+  url: "https://www.instagram.com/aurelievandaelen/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "talisalo",
+  url: "https://www.instagram.com/talisalo/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "vexx",
+  url: "https://www.instagram.com/vexx/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+
+#70
+
+
+Channel.create!(
+  name: "chloekitembo",
+  url: "https://www.instagram.com/chloekitembo/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "masoomminawala",
+  url: "https://www.instagram.com/masoomminawala/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "nathalievandenberg",
+  url: "https://www.instagram.com/nathalievandenberg/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "waystostudy",
+  url: "https://www.instagram.com/waystostudy/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "aurelaskandaj",
+  url: "https://www.instagram.com/aurelaskandaj/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+
+  #80
+
+
+Channel.create!(
+  name: "tianykirilove",
+  url: "https://www.instagram.com/tianykirilove/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "anthonylastella",
+  url: "https://www.instagram.com/anthonylastella/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "audmarshmaloo",
+  url: "https://www.instagram.com/audmarshmaloo/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "lailazaouiofficiel",
+  url: "https://www.instagram.com/lailazaouiofficiel/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "ankatrien",
+  url: "https://www.instagram.com/ankatrien/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+
+  #90
+
+  Channel.create!(
+  name: "anknook",
+  url: "https://www.instagram.com/anknook/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "queenofjetlags",
+  url: "https://www.instagram.com/queenofjetlags/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "polabur",
+  url: "https://www.instagram.com/polabur/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "laurenlewiss_",
+  url: "https://www.instagram.com/laurenlewiss_/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "shrads",
+  url: "https://www.instagram.com/shrads/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+
+#100
+
+Channel.create!(
+  name: "sebastien.nagy",
+  url: "https://www.instagram.com/sebastien.nagy/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "lebackpacker",
+  url: "https://www.instagram.com/lebackpacker/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "annecatherine_cloclo",
+  url: "https://www.instagram.com/annecatherine_cloclo/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "matthiasgeerts",
+  url: "https://www.instagram.com/matthiasgeerts/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "dimitrivegasandlikemike",
+  url: "https://www.instagram.com/dimitrivegasandlikemike/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+
+  #110
+
+Channel.create!(
+  name: "crisam",
+  url: "https://www.instagram.com/crisam/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "sofievalkiers",
+  url: "https://www.instagram.com/sofievalkiers/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "welovebrussels",
+  url: "https://www.instagram.com/welovebrussels/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "nathalievandenberg",
+  url: "https://www.instagram.com/nathalievandenberg/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "bibleoffashionjulie",
+  url: "https://www.instagram.com/bibleoffashionjulie/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+
+
+  #120
+Channel.create!(
+  name: "noemiehappart",
+  url: "https://www.instagram.com/noemiehappart/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "sofievalkiers",
+  url: "https://www.instagram.com/sofievalkiers/?utm_source=ig_embed",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "r_babyberry",
+  url: "https://www.instagram.com/r_babyberry/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "i_am_aileen",
+  url: "https://www.instagram.com/i_am_aileen/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+Channel.create!(
+  name: "thetinynomad",
+  url: "https://www.instagram.com/thetinynomad/",
+  gender: gender.sample, #OK
+  user: user, #OK
+  age: Age.all.sample, #OK
+  interests: Interest.all.sample(3) #OK
+  )
+# 120 Instagram influencers
+
+
+
