@@ -100,12 +100,11 @@ First filter : gender - No concession
         <% third_filter.each do |channel| %>
         <p>Choose your campaign influencers</p>
         <div class="channel-card">
-
           <img src="<%=channel.user.avatar  %>" alt="" class="avatar avatar-large ">
+          <a href="/" class="add-influencer"> Add to campaign</a>
           <p>Channel name: <%= channel.name %></p>
-          <p>Gender: <%= channel.gender %></p>
+          <p>Influencer: <%= channel.user.first_name %> <%= channel.gender %></p>
           <a href="channel.url">More info about the channel</a>
-          <p>Influencer: <%= channel.user.first_name %></p>
         </div>
         <% end %>
     <% end %>
