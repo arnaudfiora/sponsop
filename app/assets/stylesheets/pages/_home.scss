@@ -1,74 +1,106 @@
+.banner {
+  width: auto;
+  height: 800px;
+  margin-top: -70px;
 
-// WAS IN FEATURE.SCSS
+  h1 {
+    font-size: 88px;
+  }
 
-// .column{
-//   width: 33.33%;
-//   padding: 0 10px;
-//   height: auto;
-//   display: flex;
-//   text-align: center;
-// }
+  p {
+    font-size: 32px;
+    width: 40%;
+    padding: 0;
+  }
 
-// .features{
-//   padding: 100px;
-// }
+  #learn-more-button {
+    text-size: 12px;
+    color: yellow;
+    background-color: orange;
+  }
+}
 
-// .row{
-//   margin: 0 -5px;
-// }
+.container h2 {
+  font-size: 40px;
+  padding: 30px;
+  margin: 0;
+}
 
-// .card-info {
-//   padding: 70px;
-//   width: 100%;
-//   background-color: white;
-//   text-align: center;
-// }
+.cards-container {
+  .card-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-// WAS IN TESTIMONIALS.SCSS --> Maybe add a notification component if we use it across the whole app?
+    height: 300px;
+    padding: 15px 5px;
+    // border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    background-color: white;
 
-// .notification {
-//   display: flex;
-//   align-items: center;
-//   margin-bottom: 8px;
-//   background: white;
-//   padding: 8px 16px;
-//   border: 1px solid rgb(235,235,235);
-// }
+    .card-home-icon {
+      height: 112px;
+      display: flex;
+      align-items: center;
 
-// .notification .notification-content {
-//   flex-grow: 1;
-//   padding: 0 24px;
-// }
+      img {
+        height: 64px;
+        width: 64px;
+      }
+    }
 
-// .notification p {
-//   margin: 0;
-//   line-height: 1.4;
-// }
+    .card-home-content {
+      h3 {
+        font-size: 20px;
+      }
 
-// .notification small {
-//   color: #999999;
-//   font-weight: bold;
-// }
-// .notification .notification-actions {
-//   opacity: 0;
-//   display: flex;
-//   transition: ease .3s;
-// }
+      p {
+        font-size: 14px;
+        text-align: center;
+        padding: 0 15px;
+        margin: 0;
+      }
+    }
+  }
+}
 
-// .notification:hover .notification-actions {
-//   opacity: 1;
-// }
+.partners-container {
+  .brand-logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
-// .notification .notification-actions a {
-//   color: #999999;
-//   margin-left: 16px;
-//   font-size: 14px;
-// }
+  img {
+    height: 100px;
+    width: auto;
+  }
+}
 
-// .notification .notification-actions a:hover {
-//   color: #555555;
-// }
+.testimonials-container {
+  .testimonial {
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    // border: 1px solid rgb(235,235,235);
 
-// .title h1{
-//   color: black;
-// }
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 8px;
+    padding: 8px 16px;
+
+    .testimonial-content {
+      flex-grow: 1;
+      padding: 0 24px;
+
+      p {
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      small {
+        color: #999999;
+      }
+    }
+  }
+}
