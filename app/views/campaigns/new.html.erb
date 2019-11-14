@@ -9,8 +9,14 @@
 
       <%= f.input :name %>
       <%= f.input :description %>
-      <%= f.input :begin_date %>
-      <%= f.input :end_date %>
+      <%= f.input (:period),
+                as:'string',
+                input_html: {
+                   class: "datepicker"
+                  # data: {
+                  #   unavailable_on: @foodtruck.bookings.pluck(:date).to_json
+                  # }
+                }%>
 
       <h3>Who are your targetted consumers?</h3>
       <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false %>

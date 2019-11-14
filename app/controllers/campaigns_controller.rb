@@ -36,6 +36,6 @@ class CampaignsController < ApplicationController
   private
 
   def campaign_params
-    params.require(:campaign).permit(:name, :begin_date, :end_date, :gender, :description, interest_ids: [], age_attributes: {})
+    params.require(:campaign).permit(:name, :period, :gender, :description, interest_ids: [], age_attributes: {})
   end
 end
