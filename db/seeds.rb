@@ -1,8 +1,5 @@
 require 'faker'
 
-# User.destroy_all
-# puts "Destroyed all users"
-
 #----- CREATORS -----#
 # Admin creators
 puts "About to add some ADMIN creators... "
@@ -39,21 +36,6 @@ attributes = [{
 User.create!(attributes)
 
 puts "4 ADMIN creators added"
-
-# puts "About to add some creators... "
-
-# 50.times do
-#   User.create!(
-#     last_name: Faker::Name.unique.last_name,
-#     first_name: Faker::Name.unique.first_name,
-#     password: "1234567",
-#     email: Faker::Internet.unique.email,
-#     avatar: Faker::Avatar.image
-#   )
-# end
-
-# puts "5O creators added"
-#--------------------#
 
 #----- BRANDS -----#
 # Admin brands
