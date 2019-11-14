@@ -2,21 +2,43 @@
   width: auto;
   height: 800px;
   margin-top: -70px;
+  position: relative;
 
-  h1 {
-    font-size: 88px;
-  }
+  .container-banner {
+    width: 650px;
+    height: 350px;
 
-  p {
-    font-size: 32px;
-    width: 40%;
-    padding: 0;
-  }
+    position: absolute;
+    top: 250px;
+    left: 750px;
 
-  #learn-more-button {
-    text-size: 12px;
-    color: yellow;
-    background-color: orange;
+    h1 {
+      font-size: 88px;
+      color: black;
+    }
+
+    p {
+      font-family: 'Staatliches';
+      color: black;
+      font-size: 32px;
+      width: 75%;
+      padding: 0;
+    }
+
+    #learn-more-button {
+      margin-top: 10px;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 18px;
+      color: black;
+      background-color: grey;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    #learn-more-button:hover {
+      background-color: white;
+    }
   }
 }
 
@@ -27,6 +49,8 @@
 }
 
 .cards-container {
+  min-height: 450px;
+
   .card-home {
     display: flex;
     flex-direction: column;
@@ -44,8 +68,8 @@
       align-items: center;
 
       img {
-        height: 64px;
-        width: 64px;
+        height: 80px;
+        width: 80px;
       }
     }
 
@@ -65,10 +89,13 @@
 }
 
 .partners-container {
+  min-height: 450px;
+
   .brand-logo-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 50px;
   }
 
   img {

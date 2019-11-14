@@ -1,22 +1,82 @@
-<h1>WELCOME TO CREATOR <%= @user.first_name %>'S DASHBOARD</h1>
+<!-- <h1>WELCOME TO CREATOR <%= @user.first_name %>'S DASHBOARD</h1>
 <%= link_to "NEW CHANNEL", new_channel_path, class: 'btn btn-primary' %>
 
 <% @user.channels.each do |channel| %>
   <p><%= channel.name %></p>
-<% end %>
+<% end %> -->
 
+<div class="container testimonials-container">
+  <h2 class="text-center">NEW PROPOSALS</h2>
 
-<div class="channel-cards-container">
-
-
-  <div class="channel-card">
-
-
-
-
+  <div class="testimonial container">
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large avatar-bordered" />
+    <div class="testimonial-content p-2 ml-2 col-10">
+      <p><strong>Antoine</strong></p>
+      <p>Product Manager at Côte d’Or</p>
+      <p style="color:grey">« SponsOp was the platform we were waiting for, we connected with 10 content creators and our Summer 2019 Campaign in Rome went crazy! The possibility to connect directly with creators sharing the same audience as us made a drastic difference in the conversion rate of our advertising campaign »</p>
+    </div>
+    <div class="more-info">
+      <a class="btn btn-dark" href="#" role="button">More infos</a>
+    </div>
   </div>
 
+  <div class="testimonial">
+    <img src='https://i4.sndcdn.com/artworks-000161972087-ges84i-t120x120.jpg' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2 col-10">
+      <p><strong>Geraldine</strong></p>
+      <p>CEO at Ice Watch</p>
+      <p style="color:grey">« Thanks to SponsOp we exceeded our marketings goals for the semester. The clear interface and the easiness to navigate through the most relevant content creators for Ice Watch is the real added value of this platform »</p>
+    </div>
+    <div class="more-info">
+      <a class="btn btn-dark" href="#" role="button">More infos</a>
+    </div>
+  </div>
 
-
-
+  <div class="testimonial">
+    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2 col-10">
+      <p><strong>Arnaut</strong></p>
+      <p>Shoes Influencer</p>
+      <p style="color:grey">« With SponsOp I paired up with Veja for their last shoe collection and everything went smooth. I set my post rate, they accepted, they sent me their items and I shared it with my community, and everybody loved it »</p>
+    </div>
+    <div class="more-info">
+      <a class="btn btn-dark" href="#" role="button">More infos</a>
+    </div>
+  </div>
 </div>
+
+<div class="container testimonials-container">
+  <h2 class="text-center">PAST PROPOSALS</h2>
+
+  <div class="testimonial">
+    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large avatar-bordered" />
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Antoine</strong></p>
+      <p>Product Manager at Côte d’Or</p>
+      <p style="color:grey">« SponsOp was the platform we were waiting for, we connected with 10 content creators and our Summer 2019 Campaign in Rome went crazy! The possibility to connect directly with creators sharing the same audience as us made a drastic difference in the conversion rate of our advertising campaign »</p>
+    </div>
+    <a class="btn btn-dark" href="#" role="button">More infos</a>
+  </div>
+
+  <div class="testimonial">
+    <img src='https://i4.sndcdn.com/artworks-000161972087-ges84i-t120x120.jpg' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Geraldine</strong></p>
+      <p>CEO at Ice Watch</p>
+      <p style="color:grey">« Thanks to SponsOp we exceeded our marketings goals for the semester. The clear interface and the easiness to navigate through the most relevant content creators for Ice Watch is the real added value of this platform »</p>
+    </div>
+    <a class="btn btn-dark" href="#" role="button">More infos</a>
+  </div>
+
+  <div class="testimonial">
+    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large avatar-bordered"/>
+    <div class="testimonial-content p-2 ml-2">
+      <p><strong>Arnaut</strong></p>
+      <p>Shoes Influencer</p>
+      <p style="color:grey">« With SponsOp I paired up with Veja for their last shoe collection and everything went smooth. I set my post rate, they accepted, they sent me their items and I shared it with my community, and everybody loved it »</p>
+    </div>
+    <a class="btn btn-dark" href="#" role="button">More infos</a>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

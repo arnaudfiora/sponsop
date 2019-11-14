@@ -1,10 +1,7 @@
 <%= render 'shared/navbar' %>
 
-
 <% if @user.is_brand %>
   <%= render 'shared/brand_dashboard' %>
 <% else %>
   <%= render 'shared/creator_dashboard' %>
 <% end %>
-
-
