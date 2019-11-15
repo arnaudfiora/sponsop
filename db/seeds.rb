@@ -104,7 +104,7 @@ puts "250 creators added"
 # puts "About to add Twitch Channels"
 
 gender = ['Male', 'Female', 'Both']
-counter = 2
+counter = User.first.id
 
 counter += 1
 Channel.create!(
