@@ -1,3 +1,4 @@
+
 .messages {
   font-size: 14px;
   color: #868686;
@@ -12,6 +13,7 @@
 
 .message {
   display: flex;
+  justify-content:stretch;
   margin-bottom: 10px;
   &.right {
     flex-direction: row-reverse;
