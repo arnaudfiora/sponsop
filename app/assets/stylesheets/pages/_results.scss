@@ -1,36 +1,57 @@
-// .channels-wrapper {
-//   width: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-// }
+.results-wrapper {
+  padding-top: 20px;
+  background-color: rgba(78, 128, 152, .3);
+  min-height: 100vh;
 
-.add-influencer{
-  font-size: 11px;
-  margin-left:127px;
-  margin-bottom:70px;
+  h2 {
+    text-align: center;
+  }
+
+  .results-container {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    .cards-filters {
+      text-align: left;
+      padding: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+      width: 250px;
+      height: 100%; // to remove when content in filters
+      border: 1px solid grey;
+      background-color: rgba(78, 128, 152, .5);
+      border-radius: 5px;
+
+      position: sticky;
+      top: 80px;
+      z-index: 10;
+
+      .form-group {
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 24px;
+        text-align: center;
+      }
+    }
+  }
 }
 
-.channel-card {
-  border: 1px solid black;
-  padding: 5px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: lightgrey;
-  max-width: 300px;
-}
-
-.channel-cards{
+.channels-cards {
+  // border: 1px solid grey;
+  width: 900px;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-// .campaign-card {
-//   display: flex;
-//   justify-content: space-evenly;
-//   border: 1px solid black;
-//   padding: 5px;
-//   margin: 10px;
-//   border-radius: 5px;
+// FOR CHANNEL SHOW PAGE
 
-// }
+.channel-info-container {
+  display: flex;
+  justify-content: space-around;
+}
