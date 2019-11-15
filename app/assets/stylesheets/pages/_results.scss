@@ -1,35 +1,68 @@
-// .channels-wrapper {
+.results-wrapper {
+  padding-top: 20px;
+
+  h2 {
+    text-align: center;
+  }
+
+  .results-container {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+
+    .cards-filters {
+      width: 300px;
+      height: 500px; // to remove when content in filters
+      border: 1px solid grey;
+      background-color: lightgrey;
+
+      position: sticky;
+      top: 80px;
+      z-index: 10;
+    }
+
+    .channels-cards {
+      border: 1px solid grey;
+      width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+// IN CASE WE WANT TO ADD A MODAL WITH ALL THE INFO INSTEAD OF OPENING A NEW PAGE
+
+// .more-info-wrapper {
 //   width: 100%;
-//   display: flex;
-//   flex-wrap: wrap;
-// }
+//   height: 100%;
+//   background-color: rgba(0, 0, 0, 0.7);
 
-// .add-influencer{
-//   font-size: 11px;
-//   margin-left:127px;
-//   margin-bottom:70px;
-// }
-
-// .channel-card {
-//   border: 1px solid black;
-//   padding: 5px;
-//   margin: 10px;
-//   border-radius: 5px;
-//   background-color: lightgrey;
-//   max-width: 300px;
-// }
-
-// .channel-cards{
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .campaign-card {
-//   display: flex;
-//   justify-content: space-evenly;
-//   border: 1px solid black;
-//   padding: 5px;
-//   margin: 10px;
-//   border-radius: 5px;
+//   display: none; // Will be changed with flex by JS
+//   justify-content: center;
+//   align-items: center;
 
 // }
+
+// .more-info-card {
+//   width: 400px;
+//   height: 600px;
+//   background-color: white;
+//   text-align: center;
+//   padding: 20px;
+
+//   position: relative;
+// }
+
+// .close-modal {
+//   position: absolute;
+//   top: 10px;
+//   right: 10px;
+
+//   font-size: 48px;
+//   transform: rotate(45deg);
+// }
+
+

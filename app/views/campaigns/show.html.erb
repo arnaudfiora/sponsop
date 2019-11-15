@@ -1,24 +1,57 @@
+<!-- THIS IS THE RESULTS PAGE - WHEN A BRAND CLICKS ON ITS CAMPAIGN !!! -->
+
 <%= render 'shared/navbar' %>
 
-<h1>Channels matching with your campaign</h1>
+<div class="results-wrapper">
 
-  <div class="channel-cards">
-    <% if @results.empty? %>
-    <p>No matches found...</p>
-    <% else %>
-      <p>Choose your campaign influencers, COUNT: <%= @results.length %> </p>
-        <% @results.each do |channel| %>
+  <h2>Channels matching your campaign's criteria</h2>
+
+  <div class="results-container">
+
+    <div class="cards-filters">
+      <p>Search bar</p>
+      <p>Type of channel</p>
+      <p>Gender selection</p>
+      <p>Age selection</p>
+      <p>Center of interests</p>
+    </div>
+
+    <div class="channels-cards">
+      <% @results.each do |channel| %>
 
         <div class="channel-card">
-          <img src="<%=channel.user.avatar  %>" alt="" class="avatar avatar-large ">
-          <a href="/" class="add-influencer"> Add to campaign</a>
-          <p>Channel name: <%= channel.name %></p>
-          <p>Influencer: <%= channel.user.first_name %> <%= channel.gender %></p>
-          <a href="channel.url">More info about the channel</a>
+
+          <img src="<%= channel.user.avatar %>" alt="" class="channel-card-avatar">
+
+          <div class="channel-user-info">
+            <p><%= channel.user.first_name %> <%= channel.user.last_name %></p>
+          </div>
+
+          <a href="<%= channel.url %>" target="_blank">
+            <div class="channel-card-url">
+              <div>
+                <% if channel.url.include? 'youtube' %>
+                  <%= image_tag "youtube.png", class: "channel-card-logo"%>
+                <% elsif channel.url.include? 'instagram' %>
+                  <%= image_tag "instagram.png", class: "channel-card-logo"%>
+                <% elsif channel.url.include? 'twitch' %>
+                  <%= image_tag "twitch.png", class: "channel-card-logo"%>
+                <% elsif channel.url.include? 'facebook' %>
+                  <%= image_tag "facebook.png", class: "channel-card-logo"%>
+                <% end %>
+              </div>
+              <p>/<%= channel.name %></p>
+            </div>
+          </a>
+
+          <%= link_to "More info", channel_path(channel), class: "btn btn-primary channel-more-info mb-2" %>
+          <a href="#" class="channel-send-message btn btn-primary">Send a message</a>
         </div>
-        <% end %>
-    <% end %>
+
+      <% end %>
+    </div>
+
   </div>
+</div>
 
-
-
+<%= javascript_pack_tag 'home' %>
