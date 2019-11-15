@@ -1,41 +1,90 @@
 class CampaignsController < ApplicationController
+  before_action :set_campaign, only: %I[edit update]
+
+  def show
+    @campaign = Campaign.find(params[:id])
+    @results = filter_results(@campaign)
+  end
+
   def new
     @campaign = Campaign.new
     @campaign.build_age
-  end
-
-  def show
-    set_campaign
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      redirect_to dashboard_path # To change to campaign-page when page done
+      redirect_to campaign_path(@campaign)
     else
       render :new
     end
   end
 
-  def edit
-    set_campaign
-  end
+  def edit; end
 
   def update
-    set_campaign
     @campaign.update(campaign_params)
     @campaign.save
-    redirect_to dashboard_path
+    redirect_to campaign_path(@campaign)
   end
+
+  private
 
   def set_campaign
     @campaign = Campaign.find(params[:id])
   end
 
-  private
-
   def campaign_params
     params.require(:campaign).permit(:name, :period, :gender, :description, interest_ids: [], age_attributes: {})
+  end
+
+  def filter_results(campaign)
+    first_results = first_filter(campaign)
+    second_results = second_filter(campaign, first_results)
+    third_results = third_filter(campaign, second_results)
+
+    return third_results
+  end
+
+  def first_filter(campaign)
+    if campaign.gender == "Both"
+      first_results = Channel.all
+    else
+      first_results = Channel.where(gender: campaign.gender)
+    end
+
+    return first_results
+  end
+
+  def second_filter(campaign, first_results)
+    second_results = []
+    campaign_ages = campaign.age.attributes.values.slice(3..10)
+
+    first_results.each do |channel|
+      channel.age.attributes.values.slice(3..10).each_with_index do |age, index|
+        if age == true
+          unless second_results.include? channel
+            if age == campaign_ages[index]
+              second_results << channel
+            end
+          end
+        end
+      end
+    end
+
+    return second_results
+  end
+
+  def third_filter(campaign, second_results)
+    third_results = []
+
+    second_results.each do |channel|
+      unless (campaign.interests & channel.interests)[0].nil?
+        third_results << channel
+      end
+    end
+
+    return third_results
   end
 end
