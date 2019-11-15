@@ -29,18 +29,29 @@
       top: 80px;
       z-index: 10;
 
+      .form-group {
+        margin: 0;
+      }
+
       h3 {
         font-size: 24px;
         text-align: center;
       }
     }
-
-    .channels-cards {
-      // border: 1px solid grey;
-      width: 900px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
   }
+}
+
+.channels-cards {
+  // border: 1px solid grey;
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+// FOR CHANNEL SHOW PAGE
+
+.channel-info-container {
+  display: flex;
+  justify-content: space-around;
 }

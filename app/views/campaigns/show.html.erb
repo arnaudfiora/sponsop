@@ -4,7 +4,7 @@
 
 <div class="results-wrapper">
 
-  <h2>Channels matching your campaign's criteria</h2>
+  <h2><%= @results.length %> channels matching your campaign's criteria</h2>
 
   <div class="results-container">
 
@@ -12,7 +12,7 @@
       <%= simple_form_for (@campaign) do |f| %>
         <h3>Change your campaign's filters</h3>
         <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false, label: "• Gender:" %>
-
+        <br>
         <div class="form-group">
           <label>• Age range(s):</label>
           <%= f.simple_fields_for :age do |ff| %>
@@ -26,9 +26,9 @@
             <%= ff.input :more_65, label: "More than 65" %>
           <% end %>
         </div>
-
-        <!-- <%= f.association :interests,  as: :check_boxes, include_blank: false, label: "• Center of interests:"%> -->
-
+        <br>
+        <%= f.association :interests,  as: :check_boxes, include_blank: false, label: "• Center of interests:"%>
+        <br>
         <%= f.submit "Submit", class: "btn btn-primary w-100" %>
       <% end %>
     </div>
