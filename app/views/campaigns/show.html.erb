@@ -9,6 +9,8 @@
   <div class="results-container">
 
     <div class="cards-filters">
+      <p>FILTERS TO BUILD</p>
+      <p>Edit form ??</p>
       <p>Search bar</p>
       <p>Type of channel</p>
       <p>Gender selection</p>
@@ -27,7 +29,7 @@
             <p><%= channel.user.first_name %> <%= channel.user.last_name %></p>
           </div>
 
-          <a href="<%= channel.url %>" target="_blank">
+          <a class="channel-link" href="<%= channel.url %>" target="_blank">
             <div class="channel-card-url">
               <div>
                 <% if channel.url.include? 'youtube' %>
@@ -40,12 +42,12 @@
                   <%= image_tag "facebook.png", class: "channel-card-logo"%>
                 <% end %>
               </div>
-              <p>/<%= channel.name %></p>
+              <p><span>&nbsp;/</span><%= channel.name %></p>
             </div>
           </a>
 
-          <%= link_to "More info", channel_path(channel), class: "btn btn-primary channel-more-info mb-2" %>
-          <a href="#" class="channel-send-message btn btn-primary">Send a message</a>
+          <%= link_to "More info", channel_path(channel), class: "channel-more-info" %>
+          <!-- <a href="#" class="channel-send-message btn btn-primary">Send a message</a> -->
         </div>
 
       <% end %>

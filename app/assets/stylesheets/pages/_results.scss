@@ -9,14 +9,18 @@
     width: 100%;
     padding-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     position: relative;
 
     .cards-filters {
-      width: 300px;
+      text-align: center;
+      padding: 15px;
+
+      width: 250px;
       height: 500px; // to remove when content in filters
       border: 1px solid grey;
       background-color: lightgrey;
+      border-radius: 5px;
 
       position: sticky;
       top: 80px;
@@ -24,7 +28,7 @@
     }
 
     .channels-cards {
-      border: 1px solid grey;
+      // border: 1px solid grey;
       width: 900px;
       display: flex;
       flex-wrap: wrap;
@@ -32,37 +36,3 @@
     }
   }
 }
-
-// IN CASE WE WANT TO ADD A MODAL WITH ALL THE INFO INSTEAD OF OPENING A NEW PAGE
-
-// .more-info-wrapper {
-//   width: 100%;
-//   height: 100%;
-//   background-color: rgba(0, 0, 0, 0.7);
-
-//   display: none; // Will be changed with flex by JS
-//   justify-content: center;
-//   align-items: center;
-
-// }
-
-// .more-info-card {
-//   width: 400px;
-//   height: 600px;
-//   background-color: white;
-//   text-align: center;
-//   padding: 20px;
-
-//   position: relative;
-// }
-
-// .close-modal {
-//   position: absolute;
-//   top: 10px;
-//   right: 10px;
-
-//   font-size: 48px;
-//   transform: rotate(45deg);
-// }
-
-
