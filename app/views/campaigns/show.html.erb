@@ -1,114 +1,73 @@
+<!-- THIS IS THE RESULTS PAGE - WHEN A BRAND CLICKS ON A CAMPAIGN !!! -->
+
 <%= render 'shared/navbar' %>
 
-<h1>Channels matching with your campaign</h1>
+<div class="results-wrapper">
 
-<% @channels = Channel.all %>
+  <h2><%= @results.length %> channels matching your campaign's criteria</h2>
 
-<!-- <div class="channels-wrapper">
-  <% @channels.each do |channel| %>
+  <div class="results-container">
 
-    <div class="channel-card">
-      <p><strong><%= channel.name %></strong></p>
-      <p><%= channel.gender %></p>
-      <% channel.age.attributes.each do |key, value| %>
-        <span><%= key %> - <%= value %> </span>
-      <% end %>
-      <% channel.interests.each do |interest| %>
-        <span><%= interest.name %></span>
+    <div class="cards-filters">
+      <%= simple_form_for (@campaign) do |f| %>
+        <h3>Change your campaign's filters</h3>
+        <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false, label: "• Gender:" %>
+        <br>
+        <div class="form-group">
+          <label>• Age range(s):</label>
+          <%= f.simple_fields_for :age do |ff| %>
+            <%= ff.input :less_12, label: "Less than 12" %>
+            <%= ff.input :age_12_18, label: "12-18" %>
+            <%= ff.input :age_19_25, label: "19-25" %>
+            <%= ff.input :age_26_35, label: "26-35" %>
+            <%= ff.input :age_36_45, label: "26-45" %>
+            <%= ff.input :age_46_55, label: "46-55" %>
+            <%= ff.input :age_56_65, label: "56-65" %>
+            <%= ff.input :more_65, label: "More than 65" %>
+          <% end %>
+        </div>
+        <br>
+        <%= f.association :interests,  as: :check_boxes, include_blank: false, label: "• Center of interests:"%>
+        <br>
+        <%= f.submit "Submit", class: "btn btn-primary w-100" %>
       <% end %>
     </div>
 
-    <% end %>
-</div> -->
+    <div class="channels-cards">
+      <% @results.each do |channel| %>
 
-<!-- <h1>FILTERED RESULTS</h1>
-<h2>Info about the campaign</h2>
- -->
-<!-- <div class="channel-card">
-  <p><%= @campaign.name %></p>
-  <p><%= @campaign.gender %></p>
-  <% @campaign.age.attributes.each do |key, value| %>
-    <span><%= key %> - <%= value %></span>
-  <% end %>
-  <% @campaign.interests.each do |interest| %>
-    <span><%= interest.name %></span>
-  <% end %>
-</div> -->
-
-<!-- <h2>Results</h2>
-
-First filter : gender - No concession
-<h3>first filter</h3>
- -->
-<% if @campaign.gender == "Both" %>
-  <% first_filter = Channel.all %>
-<% else %>
-  <% first_filter = Channel.where(gender: @campaign.gender) %>
-<% end %>
-
-<!-- <p><strong><%= first_filter.length %> results after first filter</strong></p>
-<ol>
-  <% first_filter.each do |result| %>
-    <li><%= result.name %></li>
-  <% end %>
-</ol> -->
-
-<!-- Second filter : age - Flexible -->
-<!-- <h3>second filter</h3> -->
-
-<% second_filter = [] %>
-<% campaign_ages = @campaign.age.attributes.values.slice(3..10) %>
-
-
-<% first_filter.each do |channel| %>
-  <% channel.age.attributes.values.slice(3..10).each_with_index do |age, index| %>
-    <% if age == true %>
-      <% unless second_filter.include? channel %>
-        <% if age == campaign_ages[index] %>
-          <% second_filter << channel %>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<!-- <ol>
-  <% second_filter.each do |result| %>
-    <li><%= result.name %>
-      <% result.interests.each do |interest| %>
-        <span><%= interest.name %></span>
-      <% end %>
-    </li>
-  <% end %>
-</ol> -->
-
-<!-- Third filter : interests - Flexible -->
-<!-- <h3>third filter</h3> -->
-
-<% third_filter = [] %>
-
-<% second_filter.each do |channel| %>
-  <% unless (@campaign.interests & channel.interests)[0].nil? %>
-    <% third_filter << channel %>
-  <% end %>
-<% end %>
-
-  <div class="channel-cards">
-    <% if third_filter.empty? %>
-    <p>No matches found...</p>
-    <% else %>
-        <p>Choose your campaign influencers</p>
-        <% third_filter.each do |channel| %>
         <div class="channel-card">
-          <img src="<%=channel.user.avatar  %>" alt="" class="avatar avatar-large ">
-          <a href="/" class="add-influencer"> Add to campaign</a>
-          <p>Channel name: <%= channel.name %></p>
-          <p>Influencer: <%= channel.user.first_name %> <%= channel.gender %></p>
-          <a href="channel.url">More info about the channel</a>
+
+          <img src="<%= channel.user.avatar %>" alt="" class="channel-card-avatar">
+
+          <div class="channel-user-info">
+            <p><%= channel.user.first_name %> <%= channel.user.last_name %></p>
+          </div>
+
+          <a class="channel-link" href="<%= channel.url %>" target="_blank">
+            <div class="channel-card-url">
+              <div>
+                <% if channel.url.include? 'youtube' %>
+                  <%= image_tag "youtube.png", class: "channel-card-logo"%>
+                <% elsif channel.url.include? 'instagram' %>
+                  <%= image_tag "instagram.png", class: "channel-card-logo"%>
+                <% elsif channel.url.include? 'twitch' %>
+                  <%= image_tag "twitch.png", class: "channel-card-logo"%>
+                <% elsif channel.url.include? 'facebook' %>
+                  <%= image_tag "facebook.png", class: "channel-card-logo"%>
+                <% end %>
+              </div>
+              <p><span>&nbsp;/</span><%= channel.name %></p>
+            </div>
+          </a>
+
+          <%= link_to "More info", channel_path(channel), class: "channel-more-info" %>
+          <!-- <a href="#" class="channel-send-message btn btn-primary">Send a message</a> -->
         </div>
-        <% end %>
-    <% end %>
+
+      <% end %>
+    </div>
   </div>
+</div>
 
-
-
+<%= javascript_pack_tag 'home' %>
