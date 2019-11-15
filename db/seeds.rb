@@ -186,6 +186,7 @@ user = User.create!(
   )
 
 # Add Instagram influencers
+
 #0
 Channel.create!(
   name: "jannid",
@@ -205,8 +206,6 @@ Channel.create!(
   age: Age.all.sample, #OK
   interests: Interest.all.sample(3) #OK
   )
-
-
 
 Channel.create!(
   name: "brunchboys",
@@ -870,5 +869,112 @@ Channel.create!(
   )
 # 120 Instagram influencers
 
-
+Channel.create!(
+ name: "Dimitri Vegas"
+ url: 'https://www.youtube.com/channel/UCxmNWF8fQ4miqfGs84dFVrg',
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Music",
+​
+ #--------------------##
+​
+ # user1
+​
+Channel.create!(
+ name: "Stromae"
+ url: "https://youtube.com/channel/UCXF0YCBWewAj3RytJUAivGA",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Music"
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "Iliass TiiwTiiw",
+ url: "https://www.youtube.com/channel/UCBOGNP-uP69PV7Ufh7da7Rw",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Music",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "Vexx",
+ url: "https://youtube.com/channel/UC6FrNJRbr-32LUTmYw1nHFw",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Art",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "Jimmy Labeu",
+ url: "https://youtube.com/channel/UC1_1mcW4AwdcDApXLzMge4A",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Lifestyle",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "Luffy",
+ url: "https://youtube.com/channel/UC5N5jACt1Si7YPdy-_2AUag",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Beauty",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "Gaelle Garcia"
+ url: "https://youtube.com/channel/UCI0mw0nNF16fl0hQUD985VA",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Lifestyle",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "XEETECHCARE",
+ url: "https://youtube.com/channel/UCTqMx8l2TtdZ7_1A40qrFiQ",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Technology",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "Math se fait des films",
+ url: "https://youtube.com/channel/UChV2oq_a-UZfJF-UiW0u-DQ",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: "Lifestyle",
+​
+ #--------------------#
+ # user1
+​
+Channel.create!(
+ name: "MojoOnPC",
+ url: "https://www.youtube.com/channel/UCd4IkWsJxct7nDYSKrQoMyA",
+ gender: gender.sample, #OK
+ user: user, #OK
+ age: Age.all.sample, #OK
+ interests: ["Technology", "Games"],
+ #--------------------#
 
