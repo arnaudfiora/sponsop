@@ -1,6 +1,5 @@
 <div class="channel-form-wrapper">
   <div class="channel-form-content">
-
     <h1>Create a new campaign</h1>
 
     <%= simple_form_for (@campaign) do |f| %>
@@ -12,10 +11,10 @@
       <%= f.input (:period),
                 as:'string',
                 input_html: {
-                   class: "datepicker"
-                  # data: {
-                  #   unavailable_on: @foodtruck.bookings.pluck(:date).to_json
-                  # }
+                   class: "datepicker_edit",
+                  data: {
+                   default_dates: @campaign.period.split(" to ").to_json
+                   }
                 }%>
 
       <h3>Who are your targetted consumers?</h3>

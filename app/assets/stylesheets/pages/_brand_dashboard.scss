@@ -1,0 +1,57 @@
+.wrapper-dashboard{
+  text-align: center;
+  h1{
+    font-family: serif;
+    font-size: 40px;
+    font-weight:bold;
+  }
+}
+
+.button-new-campaign{
+  margin-left:910px;
+  margin-top: 30px;
+}
+
+
+.campaign-cards{
+  display: flex;
+  flex-direction: column;
+
+.campaign-card{
+  display:flex;
+  margin-bottom:10px;
+  padding: 15px 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: white;
+  text-align:start;
+
+p{
+  color:black;
+  font-weight:normal;
+}
+
+}
+
+.campaign-card-content{
+  margin-left:110px;
+
+  a{
+    font-weight:700;
+  }
+}
+
+.campaign-card-icon {
+  img {border-radius:50%;
+  width:100px;
+  }
+}
+
+}
+
+.text-campaigns{
+ margin-top: 40px;
+ h1{
+  color:black;
+  font-weight:300;
+ }
+}

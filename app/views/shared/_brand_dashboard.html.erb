@@ -1,10 +1,37 @@
-<h1>WELCOME TO BRAND DASHBOARD</h1>
-  <p>
-  <% @campaigns.each do |campaign| %>
-  <%= link_to campaign.name, campaign_path(campaign) %>
-  <%= campaign.interests.map(&:name).join(",") %>
-  <% end %>
-  </p>
-<%= link_to "NEW CAMPAIGN", new_campaign_path, class: 'btn btn-primary' %>
+<div class="wrapper-dashboard">
+
+  <h1>Welcome to your <%= @user.company %> Dashboard, <%= @user.first_name %>!</h1>
+
+  <div class="text-campaigns">
+  <h1>Your current campaigns:</h1>
+  </div>
+  <div class="button-new-campaign">
+  <%= link_to "+", new_campaign_path %>
+  </div>
+  <div class="container campaign-cards">
+
+    <% @campaigns.each_with_index do |campaign, index| %>
+
+      <%= link_to campaign_path(campaign) do %>
+        <div class="campaign-card">
+
+          <div class="campaign-card-icon">
+            <img src="https://kitt.lewagon.com/placeholder/users/Eschults" alt="">
+          </div>
+
+          <div class="campaign-card-content">
+            <p>Campaign number: <%= index + 1 %></p>
+            <p>Campaign name: <%= campaign.name %></p>
+            <%= link_to "Edit", edit_campaign_path(campaign) %>
+          </div>
+
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>
+
+
 
 

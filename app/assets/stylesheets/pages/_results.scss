@@ -1,7 +1,13 @@
-.channels-wrapper {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+// .channels-wrapper {
+//   width: 100%;
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+.add-influencer{
+  font-size: 11px;
+  margin-left:127px;
+  margin-bottom:70px;
 }
 
 .channel-card {
@@ -13,12 +19,18 @@
   max-width: 300px;
 }
 
-.campaign-card {
+.channel-cards{
   display: flex;
-  justify-content: space-evenly;
-  border: 1px solid black;
-  padding: 5px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: lightgrey;
+  justify-content: center;
+  flex-direction: column;
 }
+
+// .campaign-card {
+//   display: flex;
+//   justify-content: space-evenly;
+//   border: 1px solid black;
+//   padding: 5px;
+//   margin: 10px;
+//   border-radius: 5px;
+
+// }

@@ -18,6 +18,17 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def edit
+    set_campaign
+  end
+
+  def update
+    set_campaign
+    @campaign.update(campaign_params)
+    @campaign.save
+    redirect_to dashboard_path
+  end
+
   def set_campaign
     @campaign = Campaign.find(params[:id])
   end
@@ -25,6 +36,6 @@ class CampaignsController < ApplicationController
   private
 
   def campaign_params
-    params.require(:campaign).permit(:name, :begin_date, :end_date, :gender, interest_ids: [], age_attributes: {})
+    params.require(:campaign).permit(:name, :period, :gender, :description, interest_ids: [], age_attributes: {})
   end
 end
