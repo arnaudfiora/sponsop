@@ -1,21 +1,21 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: %I[edit update]
 
-  def new
-    @campaign = Campaign.new
-    @campaign.build_age
-  end
-
   def show
     @campaign = Campaign.find(params[:id])
     @results = filter_results(@campaign)
+  end
+
+  def new
+    @campaign = Campaign.new
+    @campaign.build_age
   end
 
   def create
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      redirect_to dashboard_path
+      redirect_to campaign_path(@campaign)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class CampaignsController < ApplicationController
   def update
     @campaign.update(campaign_params)
     @campaign.save
-    redirect_to dashboard_path
+    redirect_to campaign_path(@campaign)
   end
 
   private
