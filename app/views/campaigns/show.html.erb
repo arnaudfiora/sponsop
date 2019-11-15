@@ -97,8 +97,8 @@ First filter : gender - No concession
     <% if third_filter.empty? %>
     <p>No matches found...</p>
     <% else %>
-        <% third_filter.each do |channel| %>
         <p>Choose your campaign influencers</p>
+        <% third_filter.each do |channel| %>
         <div class="channel-card">
           <img src="<%=channel.user.avatar  %>" alt="" class="avatar avatar-large ">
           <a href="/" class="add-influencer"> Add to campaign</a>
