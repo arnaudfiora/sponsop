@@ -2640,13 +2640,11 @@ Channel.create!(
 )
 
 puts "10 fb channels added"
-=======
-puts "30 channels added to Arnaud Creator"
+
 #--------------------#
 
 puts "About to create chatroom"
 ChatRoom.create!(
     name: 'Chat'
   )
-end
 puts "Chatroom created"

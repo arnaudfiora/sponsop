@@ -23,7 +23,7 @@
         <p><%= @channel.user.first_name %> <%= @channel.user.last_name %></p>
       </div>
 
-      <a href="<%= @channel.url %>" target="_blank">
+      <a class="channel-link" href="<%= @channel.url %>" target="_blank">
         <div class="channel-card-url">
           <div>
             <% if @channel.url.include? 'youtube' %>
@@ -66,8 +66,9 @@
   </div>
 </div>
 
-
-<h1 class="text-center"><%= @channel.user.first_name %>'s other channels</h1>
+<% if @channel.user.channels.length > 1 %>
+  <h1 class="text-center"><%= @channel.user.first_name %>'s other channels</h1>
+<% end %>
 
 <div class="container channels-cards">
 
@@ -102,4 +103,8 @@
       </div>
     <% end %>
   <% end %>
+</div>
+
+<div class="w-100 text-center">
+  <a href="#" class="btn btn-primary text-center">Get in touch</a>
 </div>
