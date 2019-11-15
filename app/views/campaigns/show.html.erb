@@ -2,103 +2,13 @@
 
 <h1>Channels matching with your campaign</h1>
 
-<% @channels = Channel.all %>
-
-<!-- <div class="channels-wrapper">
-  <% @channels.each do |channel| %>
-
-    <div class="channel-card">
-      <p><strong><%= channel.name %></strong></p>
-      <p><%= channel.gender %></p>
-      <% channel.age.attributes.each do |key, value| %>
-        <span><%= key %> - <%= value %> </span>
-      <% end %>
-      <% channel.interests.each do |interest| %>
-        <span><%= interest.name %></span>
-      <% end %>
-    </div>
-
-    <% end %>
-</div> -->
-
-<!-- <h1>FILTERED RESULTS</h1>
-<h2>Info about the campaign</h2>
- -->
-<!-- <div class="channel-card">
-  <p><%= @campaign.name %></p>
-  <p><%= @campaign.gender %></p>
-  <% @campaign.age.attributes.each do |key, value| %>
-    <span><%= key %> - <%= value %></span>
-  <% end %>
-  <% @campaign.interests.each do |interest| %>
-    <span><%= interest.name %></span>
-  <% end %>
-</div> -->
-
-<!-- <h2>Results</h2>
-
-First filter : gender - No concession
-<h3>first filter</h3>
- -->
-<% if @campaign.gender == "Both" %>
-  <% first_filter = Channel.all %>
-<% else %>
-  <% first_filter = Channel.where(gender: @campaign.gender) %>
-<% end %>
-
-<!-- <p><strong><%= first_filter.length %> results after first filter</strong></p>
-<ol>
-  <% first_filter.each do |result| %>
-    <li><%= result.name %></li>
-  <% end %>
-</ol> -->
-
-<!-- Second filter : age - Flexible -->
-<!-- <h3>second filter</h3> -->
-
-<% second_filter = [] %>
-<% campaign_ages = @campaign.age.attributes.values.slice(3..10) %>
-
-
-<% first_filter.each do |channel| %>
-  <% channel.age.attributes.values.slice(3..10).each_with_index do |age, index| %>
-    <% if age == true %>
-      <% unless second_filter.include? channel %>
-        <% if age == campaign_ages[index] %>
-          <% second_filter << channel %>
-        <% end %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<!-- <ol>
-  <% second_filter.each do |result| %>
-    <li><%= result.name %>
-      <% result.interests.each do |interest| %>
-        <span><%= interest.name %></span>
-      <% end %>
-    </li>
-  <% end %>
-</ol> -->
-
-<!-- Third filter : interests - Flexible -->
-<!-- <h3>third filter</h3> -->
-
-<% third_filter = [] %>
-
-<% second_filter.each do |channel| %>
-  <% unless (@campaign.interests & channel.interests)[0].nil? %>
-    <% third_filter << channel %>
-  <% end %>
-<% end %>
-
   <div class="channel-cards">
-    <% if third_filter.empty? %>
+    <% if @results.empty? %>
     <p>No matches found...</p>
     <% else %>
-        <% third_filter.each do |channel| %>
-        <p>Choose your campaign influencers</p>
+      <p>Choose your campaign influencers, COUNT: <%= @results.length %> </p>
+        <% @results.each do |channel| %>
+
         <div class="channel-card">
           <img src="<%=channel.user.avatar  %>" alt="" class="avatar avatar-large ">
           <a href="/" class="add-influencer"> Add to campaign</a>

@@ -1,8 +1,9 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: %I[show edit update delete]
 
-  # def index
-  # end
+  def index
+    @channels = Channel.all
+  end
 
   # def show
   # end
