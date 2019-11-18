@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_095148) do
     t.string "avatar", default: "http://www.baytekent.com/wp-content/uploads/2016/12/facebook-default-no-profile-pic1.jpg"
     t.string "company"
     t.text "description"
-    t.text "request"
+    t.text "requests"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
