@@ -15,6 +15,7 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
+      flash[:notice] = "You successfully created the campaign '#{@campaign.name}'"
       redirect_to campaign_path(@campaign)
     else
       render :new
