@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: %I[edit update]
+  before_action :set_campaign, only: %I[edit update destroy]
 
   def show
     @campaign = Campaign.find(params[:id])
@@ -15,7 +15,8 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      redirect_to campaign_path(@campaign)
+      flash[:notice] = "You successfully created the campaign '#{@campaign.name}'"
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -27,6 +28,11 @@ class CampaignsController < ApplicationController
     @campaign.update(campaign_params)
     @campaign.save
     redirect_to campaign_path(@campaign)
+  end
+
+  def destroy
+    @campaign.destroy
+    redirect_to dashboard_path
   end
 
   private

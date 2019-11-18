@@ -1,37 +1,34 @@
-<div class="wrapper-dashboard">
+<div class="dashboard-banner">
+  <h1 style="text-transform: uppercase"><%= current_user.company %></h1>
+  <h2><%= current_user.first_name %>'s Dashboard</h2>
+</div>
 
-  <h1>Welcome to your <%= @user.company %> Dashboard, <%= @user.first_name %>!</h1>
+<div class="line-separator"><div class="line"></div></div>
 
-  <div class="text-campaigns">
-  <h1>Your current campaigns:</h1>
-  </div>
-  <div class="button-new-campaign">
-  <%= link_to "+", new_campaign_path %>
-  </div>
-  <div class="container campaign-cards">
+<div class="dashboard-title">
+  <h2>Current campaigns -<%= link_to "Add one", new_campaign_path, class: "new-campaign-button"%></h2>
+</div>
 
-    <% @campaigns.each_with_index do |campaign, index| %>
+<div class="dashboard-container">
 
-      <%= link_to campaign_path(campaign) do %>
-        <div class="campaign-card">
-
-          <div class="campaign-card-icon">
-            <img src="https://kitt.lewagon.com/placeholder/users/Eschults" alt="">
-          </div>
-
-          <div class="campaign-card-content">
-            <p>Campaign number: <%= index + 1 %></p>
-            <p>Campaign name: <%= campaign.name %></p>
-            <%= link_to "Edit", edit_campaign_path(campaign) %>
-          </div>
-
+  <% @campaigns.each do |campaign| %>
+    <%= link_to campaign_path(campaign), class: 'link-to' do %>
+      <div class="campaign-card">
+        <div class="campaign-card-content">
+          <h3 style="font-size: 20px;"><%= campaign.name %></h3>
+          <p><%= campaign.description %></p>
+          <p><%= campaign.period %></p>
         </div>
-      <% end %>
+        <div class="campaign-card-actions">
+          <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
+          <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
+        </div>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 
 </div>
 
-
-
-
+<div class="line-separator">
+  <div class="line"></div>
+</div>

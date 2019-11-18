@@ -1,0 +1,34 @@
+.dashboard-banner {
+  width: 100%;
+  height: 200px;
+  background-color: #212227;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.line-separator {
+  width: 100%;
+  text-align: center;
+
+  .line {
+    display: inline-block;
+    width: 90%;
+    height: 1px;
+    border-bottom: 1px solid grey;
+  }
+}
