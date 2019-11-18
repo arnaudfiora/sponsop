@@ -14,8 +14,15 @@
   <% @campaigns.each do |campaign| %>
     <%= link_to campaign_path(campaign), class: 'link-to' do %>
       <div class="campaign-card">
-        <h3><%= campaign.name %></h3>
-        <p><%= campaign.description %></p>
+        <div class="campaign-card-content">
+          <h3 style="font-size: 20px;"><%= campaign.name %></h3>
+          <p><%= campaign.description %></p>
+          <p><%= campaign.period %></p>
+        </div>
+        <div class="campaign-card-actions">
+          <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
+          <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
+        </div>
       </div>
     <% end %>
   <% end %>

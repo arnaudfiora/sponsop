@@ -1,14 +1,3 @@
-.dashboard-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-
-  h2 {
-    text-align: center;
-  }
-}
-
 .new-campaign-button {
   color: black;
   font-size: 2rem;
@@ -23,27 +12,47 @@
 .dashboard-container {
   width: 900px;
   margin: 0 auto;
+  padding-top: 20px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   .link-to {
-    text-decoration: none,
+    text-decoration: none;
+    color: black;
   }
 
   .campaign-card {
     background-color: lightgrey;
     border-radius: 5px;
-    border: 1px solid #212227;;
+    border: 1px solid #212227;
+    margin: 0 5px;
 
     width: 400px;
     padding: 10px 20px;
 
     text-align: center;
     color: #212227;
+
+    position: relative
   }
 
   .campaign-card:hover {
-    background-color: #212227;
-    color: white;
+    box-shadow: 0 0 20px #212227;
   }
+
+  .campaign-card-actions {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+}
+
+.link-to.delete:hover {
+  color: red;
+}
+
+.link-to.edit:hover {
+  color: orange;
 }

@@ -10,6 +10,17 @@
   justify-content: center;
 }
 
+.dashboard-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+  h2 {
+    text-align: center;
+  }
+}
+
 .line-separator {
   width: 100%;
   text-align: center;
