@@ -1,57 +1,49 @@
-.wrapper-dashboard{
-  text-align: center;
-  h1{
-    font-family: serif;
-    font-size: 40px;
-    font-weight:bold;
-  }
-}
-
-.button-new-campaign{
-  margin-left:910px;
-  margin-top: 30px;
-}
-
-
-.campaign-cards{
+.dashboard-title {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 
-.campaign-card{
-  display:flex;
-  margin-bottom:10px;
-  padding: 15px 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: white;
-  text-align:start;
-
-p{
-  color:black;
-  font-weight:normal;
-}
-
-}
-
-.campaign-card-content{
-  margin-left:110px;
-
-  a{
-    font-weight:700;
+  h2 {
+    text-align: center;
   }
 }
 
-.campaign-card-icon {
-  img {border-radius:50%;
-  width:100px;
+.new-campaign-button {
+  color: black;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.new-campaign-button:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.dashboard-container {
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  .link-to {
+    text-decoration: none,
   }
-}
 
-}
+  .campaign-card {
+    background-color: lightgrey;
+    border-radius: 5px;
+    border: 1px solid #212227;;
 
-.text-campaigns{
- margin-top: 40px;
- h1{
-  color:black;
-  font-weight:300;
- }
+    width: 400px;
+    padding: 10px 20px;
+
+    text-align: center;
+    color: #212227;
+  }
+
+  .campaign-card:hover {
+    background-color: #212227;
+    color: white;
+  }
 }
