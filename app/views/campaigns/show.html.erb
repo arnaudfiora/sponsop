@@ -60,7 +60,7 @@
               <p><span>&nbsp;/</span><%= channel.name %></p>
             </div>
           </a>
-
+          <%= link_to "Enter into contact", new_chat_room_path(channel)  %>
           <%= link_to "More info", channel_path(channel), class: "channel-more-info" %>
           <!-- <a href="#" class="channel-send-message btn btn-primary">Send a message</a> -->
         </div>
