@@ -1,7 +1,7 @@
 <div class="wrapper-dashboard">
 
   <h1>Welcome to your <%= @user.company %> Dashboard, <%= @user.first_name %>!</h1>
-
+  <%= link_to "See your messages", messengers_index_path %>
   <div class="text-campaigns">
   <h1>Your current campaigns:</h1>
   </div>

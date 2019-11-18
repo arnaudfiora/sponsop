@@ -1,0 +1,5 @@
+<h1>All your conversations</h1>
+
+<% @chat_rooms.each do |chatroom| %>
+<%= link_to chatroom.name, messengers_show(chatroom) %>
+<% end %>

@@ -11,6 +11,7 @@ class ChatRoomsController < ApplicationController
       redirect_to chat_room_path(existing_chatroom)
     else
       @chatroom = ChatRoom.new(name: "conversation #{user_1} and #{user_2}", user1: user_1, user2: user_2)
+      @chatroom.user = current_user
         if @chatroom.save
         redirect_to chat_room_path(@chatroom)
         end
