@@ -1,4 +1,9 @@
 require 'faker'
+require 'json'
+require 'open-uri'
+
+api_url_avatar = 'https://randomuser.me/api/'
+
 
 # User.destroy_all
 
@@ -84,13 +89,13 @@ puts "10 ages added"
 
 # #----- USERS CREATORS -----#
 puts "About to add creators"
-
 250.times do
+  result = JSON.parse(open(api_url_avatar).read)
   User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
-    avatar: 'https://picsum.photos/200',
+    avatar: result["results"].first["picture"]["large"],
     password: 'sponsop'
   )
 end
