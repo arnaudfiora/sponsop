@@ -1,57 +1,58 @@
-.wrapper-dashboard{
-  text-align: center;
-  h1{
-    font-family: serif;
-    font-size: 40px;
-    font-weight:bold;
-  }
+.new-campaign-button {
+  color: black;
+  font-size: 2rem;
+  padding: 10px;
 }
 
-.button-new-campaign{
-  margin-left:910px;
-  margin-top: 30px;
+.new-campaign-button:hover {
+  color: orange;
+  text-decoration: none;
 }
 
-
-.campaign-cards{
+.dashboard-container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 20px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
 
-.campaign-card{
-  display:flex;
-  margin-bottom:10px;
-  padding: 15px 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: white;
-  text-align:start;
+  .link-to {
+    text-decoration: none;
+    color: black;
+  }
 
-p{
-  color:black;
-  font-weight:normal;
-}
+  .campaign-card {
+    background-color: lightgrey;
+    border-radius: 5px;
+    border: 1px solid #212227;
+    margin: 0 5px;
 
-}
+    width: 400px;
+    padding: 10px 20px;
 
-.campaign-card-content{
-  margin-left:110px;
+    text-align: center;
+    color: #212227;
 
-  a{
-    font-weight:700;
+    position: relative
+  }
+
+  .campaign-card:hover {
+    box-shadow: 0 0 20px #212227;
+  }
+
+  .campaign-card-actions {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%)
   }
 }
 
-.campaign-card-icon {
-  img {border-radius:50%;
-  width:100px;
-  }
+.link-to.delete:hover {
+  color: red;
 }
 
-}
-
-.text-campaigns{
- margin-top: 40px;
- h1{
-  color:black;
-  font-weight:300;
- }
+.link-to.edit:hover {
+  color: orange;
 }
