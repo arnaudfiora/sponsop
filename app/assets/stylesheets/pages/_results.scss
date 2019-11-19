@@ -1,7 +1,5 @@
 .results-wrapper {
   padding-top: 20px;
-  // background-color: rgba(78, 128, 152, .3);
-  min-height: 100vh;
 
   h2 {
     text-align: center;
@@ -48,4 +46,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: auto;
 }

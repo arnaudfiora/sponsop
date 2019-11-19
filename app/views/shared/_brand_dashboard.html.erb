@@ -3,8 +3,6 @@
   <h2 class="animated bounce"><%= current_user.first_name %>'s Dashboard</h2>
 </div>
 
-<div class="line-separator"><div class="line"></div></div>
-
 <div class="dashboard-title">
   <h2>Current campaigns - </h2>
   <span class="dashboard-title-button">
@@ -17,18 +15,24 @@
 <div class="dashboard-container">
 
   <% @campaigns.each do |campaign| %>
-    <%= link_to campaign_path(campaign), class: 'link-to' do %>
-      <div class="campaign-card">
-        <div class="campaign-card-content">
-          <h3 style="font-size: 20px;"><%= campaign.name %></h3>
-          <p><%= campaign.description %></p>
-          <p><%= campaign.period %></p>
+
+    <% end_date = campaign.period.split('to').last.strip %>
+    <% user_date = Date.today.to_s %>
+
+    <% if end_date > user_date %>
+      <%= link_to campaign_path(campaign), class: 'link-to' do %>
+        <div class="campaign-card">
+          <div class="campaign-card-content">
+            <h3 style="font-size: 20px;"><%= campaign.name %></h3>
+            <p><%= campaign.description %></p>
+            <p><%= campaign.period %></p>
+          </div>
+          <div class="campaign-card-actions">
+            <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
+            <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
+          </div>
         </div>
-        <div class="campaign-card-actions">
-          <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
-          <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
 
@@ -38,4 +42,33 @@
   <div class="line"></div>
 </div>
 
-<%= render 'shared/footer' %>
+<div class="dashboard-title">
+  <h2>Previous campaigns</h2>
+</div>
+
+<div class="dashboard-container">
+
+  <% @campaigns.each do |campaign| %>
+
+    <% end_date = campaign.period.split('to').last.strip %>
+    <% user_date = Date.today.to_s %>
+
+    <% if end_date < user_date %>
+      <%= link_to campaign_path(campaign), class: 'link-to' do %>
+        <div class="campaign-card">
+          <div class="campaign-card-content">
+            <h3 style="font-size: 20px;"><%= campaign.name %></h3>
+            <p><%= campaign.description %></p>
+            <p><%= campaign.period %></p>
+          </div>
+          <div class="campaign-card-actions">
+            <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
+            <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>
+

@@ -6,7 +6,7 @@ let datepicker = document.querySelector(".datepicker")
 if (datepicker) {
   flatpickr(".datepicker", {
     mode: "range",
-    altInput: true,
-    minDate: Date.now()
+    altInput: true
+    // minDate: Date.now()
   })
 }
