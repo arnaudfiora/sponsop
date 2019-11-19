@@ -20,7 +20,7 @@
     <li>A 100-year contract at a rate of 1 video/week</li>
   </ul>
   <div class="w-100 text-center">
-    <a href="#" class="btn btn-secondary text-center">Get in touch</a>
+    <a href="#" class="btn btn-primary text-center">Get in touch</a>
   </div>
 </div>
 
@@ -32,7 +32,7 @@
 
 <div class="container channel-info-container w-50">
   <div>
-    <div class="channel-card">
+    <div class="channel-card channel-show-card">
 
       <img src="<%= @channel.user.avatar %>" alt="" class="channel-card-avatar">
 
@@ -60,13 +60,16 @@
   </div>
 
   <div>
+    <h3 class="text-center">Audience</h3>
     <div class="channel-segmentation">
-      <h3>Audience</h3>
       <div>
-        <p>Gender: <%= @channel.gender %></p>
+        <p class="segmentation-title">Gender</p>
+        <ul>
+          <li><%= @channel.gender %></li>
+        </ul>
       </div>
       <div>
-        <p>Age:</p>
+        <p class="segmentation-title">Age</p>
         <ul>
           <% @channel.age.attributes.each do |key, value| %>
             <% if value == true %>
@@ -76,7 +79,7 @@
         </ul>
       </div>
       <div>
-        <p>Interests:</p>
+        <p class="segmentation-title">Interests</p>
         <ul>
           <% @channel.interests.each do |interest| %>
             <li><%= interest.name %></li>

@@ -1,0 +1,35 @@
+.channel-info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.channel-show-card {
+  box-shadow: none;
+  margin: 0;
+}
+
+.channel-show-card:hover{
+  background-color: white;
+}
+
+.channel-segmentation {
+  display: flex;
+
+  div {
+    min-width: 150px;
+    // border: 1px solid black;
+    margin-right: 5px;
+
+    .segmentation-title {
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
+
+body > div.container.channel-info-container.w-50 > div:nth-child(2) > div > div:nth-child(2) {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
