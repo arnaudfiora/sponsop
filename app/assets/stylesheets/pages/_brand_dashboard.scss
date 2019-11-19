@@ -1,12 +1,17 @@
+
 .new-campaign-button {
   color: black;
   font-size: 2rem;
   padding: 10px;
+  border: 1px solid black;
+  margin-left: 7px;
+  border-radius: 15px;
 }
 
 .new-campaign-button:hover {
   color: orange;
   text-decoration: none;
+  box-shadow: 0 0 5px #212227
 }
 
 .dashboard-container {
