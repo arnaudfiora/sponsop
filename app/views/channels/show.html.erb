@@ -20,7 +20,7 @@
     <li>A 100-year contract at a rate of 1 video/week</li>
   </ul>
   <div class="w-100 text-center">
-    <a href="#" class="btn btn-primary text-center">Get in touch</a>
+    <a href="#" class="btn btn-secondary text-center">Get in touch</a>
   </div>
 </div>
 
@@ -94,7 +94,7 @@
     <h2><%= @channel.user.first_name %>'s other channels</h2>
   </div>
 
-  <div class="container channels-cards">
+  <div class="container channels-cards other-channels">
 
     <% @channel.user.channels.each do |other_channel| %>
       <% unless other_channel == @channel %>
@@ -129,3 +129,5 @@
     <% end %>
   </div>
 <% end %>
+
+<%= render 'shared/footer' %>
