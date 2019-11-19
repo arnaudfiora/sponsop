@@ -1,21 +1,38 @@
 <%= render 'shared/navbar' %>
 
-<div class="container mt-2 creator-info-container w-50">
-  <h1 class="text-center">About <%= @channel.user.first_name %> <%= @channel.user.last_name %></h1>
-  <p>"I have been an influencer for more than a decade. I basically invented the influencer game. I am a legend and you want to collaborate with me"</p>
-  <p>What is <%= @channel.user.first_name %> looking for?</p>
+<div class="dashboard-banner">
+  <h1 style="text-transform: uppercase"><%= @channel.user.first_name %> <%= @channel.user.last_name %></h1>
+</div>
+
+<div class="line-separator"><div class="line"></div></div>
+
+<div class="dashboard-title">
+  <h2>About <%= @channel.user.first_name %></h2>
+</div>
+
+<div class='container w-50'>
+  <p class="text-center">"I have been an influencer for more than a decade. I basically invented the influencer game. I am a legend and you want to collaborate with me"</p>
+  <!-- <p class="text-center">"<%= @channel.user.description %>"</p> -->
+  <p><strong>What is <%= @channel.user.first_name %> looking for?</strong></p>
   <ul>
     <li>3000$ to advertise your brand in a video (10sec ad)</li>
     <li>A ton of goodies to send to my believers, that's how I call them</li>
     <li>A 100-year contract at a rate of 1 video/week</li>
   </ul>
+  <div class="w-100 text-center">
+    <a href="#" class="btn btn-primary text-center">Get in touch</a>
+  </div>
 </div>
 
-<h1 class="text-center">About <%= @channel.name %></h1>
-<div class="container channel-info-container w-50">
+<div class="line-separator"><div class="line"></div></div>
 
+<div class="dashboard-title">
+  <h2>About <%= @channel.user.first_name %>'s channel: <%= @channel.name %></h2>
+</div>
+
+<div class="container channel-info-container w-50">
   <div>
-    <div class="channel-card">
+    <div class="channel-card channel-show-card">
 
       <img src="<%= @channel.user.avatar %>" alt="" class="channel-card-avatar">
 
@@ -43,68 +60,77 @@
   </div>
 
   <div>
+    <h3 class="text-center">Audience</h3>
     <div class="channel-segmentation">
-      <h3>audience</h3>
-      <p>Gender: <%= @channel.gender %></p>
-
-      <p>Age:</p>
-      <ul>
-        <% @channel.age.attributes.each do |key, value| %>
-          <% if value == true %>
-            <li><%= key %></li>
+      <div>
+        <p class="segmentation-title">Gender</p>
+        <ul>
+          <li><%= @channel.gender %></li>
+        </ul>
+      </div>
+      <div>
+        <p class="segmentation-title">Age</p>
+        <ul>
+          <% @channel.age.attributes.each do |key, value| %>
+            <% if value == true %>
+              <li><%= key %></li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-
-      <p>Interests:</p>
-      <ul>
-        <% @channel.interests.each do |interest| %>
-          <li><%= interest.name %></li>
-        <% end %>
-      </ul>
+        </ul>
+      </div>
+      <div>
+        <p class="segmentation-title">Interests</p>
+        <ul>
+          <% @channel.interests.each do |interest| %>
+            <li><%= interest.name %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
+<div class="line-separator"><div class="line"></div></div>
+
 <% if @channel.user.channels.length > 1 %>
-  <h1 class="text-center"><%= @channel.user.first_name %>'s other channels</h1>
+  <div class="dashboard-title">
+    <h2><%= @channel.user.first_name %>'s other channels</h2>
+  </div>
+
+  <div class="container channels-cards other-channels">
+
+    <% @channel.user.channels.each do |other_channel| %>
+      <% unless other_channel == @channel %>
+        <div class="channel-card">
+
+          <img src="<%= other_channel.user.avatar %>" alt="" class="channel-card-avatar">
+
+          <div class="channel-user-info">
+            <p><%= other_channel.user.first_name %> <%= other_channel.user.last_name %></p>
+          </div>
+
+          <a class="channel-link" href="<%= other_channel.url %>" target="_blank">
+            <div class="channel-card-url">
+              <div>
+                <% if other_channel.url.include? 'youtube' %>
+                  <%= image_tag "youtube.png", class: "channel-card-logo"%>
+                <% elsif other_channel.url.include? 'instagram' %>
+                  <%= image_tag "instagram.png", class: "channel-card-logo"%>
+                <% elsif other_channel.url.include? 'twitch' %>
+                  <%= image_tag "twitch.png", class: "channel-card-logo"%>
+                <% elsif other_channel.url.include? 'facebook' %>
+                  <%= image_tag "facebook.png", class: "channel-card-logo"%>
+                <% end %>
+              </div>
+              <p><span>&nbsp;/</span><%= other_channel.name %></p>
+            </div>
+          </a>
+
+          <%= link_to "More info", channel_path(other_channel), class: "channel-more-info" %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 <% end %>
 
-<div class="container channels-cards">
-
-  <% @channel.user.channels.each do |other_channel| %>
-    <% unless other_channel == @channel %>
-      <div class="channel-card">
-
-        <img src="<%= other_channel.user.avatar %>" alt="" class="channel-card-avatar">
-
-        <div class="channel-user-info">
-          <p><%= other_channel.user.first_name %> <%= other_channel.user.last_name %></p>
-        </div>
-
-        <a class="channel-link" href="<%= other_channel.url %>" target="_blank">
-          <div class="channel-card-url">
-            <div>
-              <% if other_channel.url.include? 'youtube' %>
-                <%= image_tag "youtube.png", class: "channel-card-logo"%>
-              <% elsif other_channel.url.include? 'instagram' %>
-                <%= image_tag "instagram.png", class: "channel-card-logo"%>
-              <% elsif other_channel.url.include? 'twitch' %>
-                <%= image_tag "twitch.png", class: "channel-card-logo"%>
-              <% elsif other_channel.url.include? 'facebook' %>
-                <%= image_tag "facebook.png", class: "channel-card-logo"%>
-              <% end %>
-            </div>
-            <p><span>&nbsp;/</span><%= other_channel.name %></p>
-          </div>
-        </a>
-
-        <%= link_to "More info", channel_path(other_channel), class: "channel-more-info" %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="w-100 text-center">
-  <a href="#" class="btn btn-primary text-center">Get in touch</a>
-</div>
+<%= render 'shared/footer' %>

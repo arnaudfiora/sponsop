@@ -73,13 +73,10 @@ ActiveRecord::Schema.define(version: 2019_11_18_144948) do
 
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user1"
     t.string "user2"
-    t.string "email"
-    t.index ["user_id"], name: "index_chat_rooms_on_user_id"
   end
 
   create_table "interests", force: :cascade do |t|

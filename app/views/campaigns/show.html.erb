@@ -20,7 +20,7 @@
             <%= ff.input :age_12_18, label: "12-18" %>
             <%= ff.input :age_19_25, label: "19-25" %>
             <%= ff.input :age_26_35, label: "26-35" %>
-            <%= ff.input :age_36_45, label: "26-45" %>
+            <%= ff.input :age_36_45, label: "36-45" %>
             <%= ff.input :age_46_55, label: "46-55" %>
             <%= ff.input :age_56_65, label: "56-65" %>
             <%= ff.input :more_65, label: "More than 65" %>
@@ -60,8 +60,8 @@
               <p><span>&nbsp;/</span><%= channel.name %></p>
             </div>
           </a>
-          <%= link_to "Enter into contact", new_chat_room_path(channel)  %>
-          <%= link_to "More info", channel_path(channel), class: "channel-more-info" %>
+          <%= link_to "Send message", new_chat_room_path(channel), class: "channel-more-info w-80"  %>
+          <%= link_to "More info", channel_path(channel), class: "channel-more-info w-80" %>
           <!-- <a href="#" class="channel-send-message btn btn-primary">Send a message</a> -->
         </div>
 
