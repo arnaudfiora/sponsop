@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messengers/index'
+  get 'messengers/show'
   get 'messages/create'
   # get 'chat_rooms/show'
   get 'campaign_interests/create'
@@ -14,4 +16,6 @@ Rails.application.routes.draw do
   post ('chat_rooms/:chat_room_id/messages'), to: 'messages#create', as: :chat_room_messages
 
   mount ActionCable.server => "/cable"
+
+  resources :messengers, only:[:index,:show]
 end
