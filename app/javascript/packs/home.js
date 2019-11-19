@@ -52,5 +52,3 @@ const homePageFunctions = () => {
 }
 
 homePageFunctions();
-
-// ---------------- //

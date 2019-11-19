@@ -1,2 +1,39 @@
-<h1>Channels#edit</h1>
-<p>Find me in app/views/channels/edit.html.erb</p>
+<div class="channel-form-wrapper">
+  <div class="channel-form-content">
+    <h1>Edit your channel</h1>
+
+    <%= simple_form_for (@channel) do |f| %>
+
+      <h3>Information about your channel</h3>
+
+      <%= f.input :name, placeholder: 'Binging with Babish' %>
+      <%= f.input :url, label: 'URL', placeholder: 'https://www.instagram.com/bingingwithbabish/' %>
+
+      <h3>Your community</h3>
+
+      <%= f.input :gender, :as => :select, :collection => Channel::GENDER, include_blank: false, label: 'Who enjoys your content?' %>
+
+      <div class="form-group">
+        <label class="required">Age of audience <abbr title="required">*</abbr> </label>
+        <%= f.simple_fields_for :age do |ff| %>
+          <%= ff.input :less_12, label: "Less than 12" %>
+          <%= ff.input :age_12_18, label: '12-18' %>
+          <%= ff.input :age_19_25, label: '19-25' %>
+          <%= ff.input :age_26_35, label: '26-35' %>
+          <%= ff.input :age_36_45, label: '36-45' %>
+          <%= ff.input :age_46_55, label: '46-55' %>
+          <%= ff.input :age_56_65, label: '56-65' %>
+          <%= ff.input :more_65, label: 'More than 65' %>
+        <% end %>
+      </div>
+
+      <h3>Your content</h3>
+      <div >
+        <%= f.association :interests,  as: :check_boxes, label: 'What is your channel about? Select as many as you want', input_html: { class: "interests-grid" } %>
+      </div>
+      <%= f.submit "Create channel", class: "btn btn-primary w-100" %>
+      <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-100 my-2" %>
+    <% end %>
+  </div>
+
+</div>

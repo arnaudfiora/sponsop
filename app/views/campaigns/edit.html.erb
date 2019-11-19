@@ -11,7 +11,7 @@
       <%= f.input (:period),
                 as:'string',
                 input_html: {
-                   class: "datepicker_edit",
+                  class: "datepicker",
                   data: {
                    default_dates: @campaign.period.split(" to ").to_json
                    }
@@ -27,7 +27,7 @@
           <%= ff.input :age_12_18, label: "12-18" %>
           <%= ff.input :age_19_25, label: "19-25" %>
           <%= ff.input :age_26_35, label: "26-35" %>
-          <%= ff.input :age_36_45, label: "26-45" %>
+          <%= ff.input :age_36_45, label: "36-45" %>
           <%= ff.input :age_46_55, label: "46-55" %>
           <%= ff.input :age_56_65, label: "56-65" %>
           <%= ff.input :more_65, label: "More than 65" %>
