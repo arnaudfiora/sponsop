@@ -10,16 +10,3 @@ if (datepicker) {
     minDate: Date.now()
   })
 }
-
- datepicker = document.querySelector(".datepicker_edit")
-
-if (datepicker) {
- const previousDates = JSON.parse(datepicker.dataset.defaultDates)
- console.log(previousDates)
-  flatpickr(".datepicker_edit", {
-    mode: "range",
-    altInput: true,
-    defaultDate: previousDates,
-    minDate: Date.now()
-  })
-}
