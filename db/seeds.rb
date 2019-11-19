@@ -2648,8 +2648,54 @@ puts "10 fb channels added"
 
 #--------------------#
 
-puts "About to create chatroom"
-ChatRoom.create!(
-    name: 'Chat'
-  )
-puts "Chatroom created"
+#puts "About to create chatroom"
+#ChatRoom.create!(
+ #   name: 'Chat'
+ # )
+#puts "Chatroom created"
+
+#seeds for demoday
+puts "seeds demoday"
+
+user = User.create!(
+  description: "Temporary Description",
+  requests: "All the requests",
+  first_name: "Molly",
+  last_name: "Thang",
+  avatar: "https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/21369308_1505850619493184_3867962851779440177_n.jpg?_nc_cat=106&_nc_oc=AQlGMfzqd2KM8fM5SAQlcbD6QR3BF4FE2k5yx3gRt9AYm-GrIat_QJhBfzBDccWxTqE&_nc_ht=scontent-bru2-1.xx&oh=ac2bd59d8bcd3e2acf048a4ddce49ec0&oe=5E3F068E",
+  email:"balek@hotmail.com",
+  password: "sponsop"
+ )
+
+age = Age.create!( less_12: false, age_12_18: false, age_19_25: true, age_26_35: true, age_36_45: true, age_46_55: false, age_56_65: false, more_65: false )
+
+
+channel = Channel.new(
+ name: "EatMoveRest",
+ url: "https://www.youtube.com/channel/UCPU-z_1fyruAf4OIeKM8FZA",
+ gender: "Both",
+ user: user,
+ age: age
+)
+channel.save
+
+channel = Channel.new(
+ name: "fashionveggie",
+ url: "https://www.instagram.com/fashionveggie/",
+ gender: "Both",
+ user: user,
+ age: age
+)
+channel.save
+
+
+channel = Channel.new(
+ name: "fashionveggie",
+ url: "https://www.facebook.com/fashionveggie/",
+ gender: "Both",
+ user: user,
+ age: age,
+)
+
+channel.save
+puts "demoday added"
