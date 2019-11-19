@@ -8,8 +8,7 @@ class MessengersController < ApplicationController
   end
 
 
-
   def set_messenger
-  @chat_room = ChatRoom.find(params[:id])
+  @chat_room = ChatRoom.find(params[:format])
   end
 end
