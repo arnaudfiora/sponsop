@@ -1,5 +1,7 @@
 <%= render 'shared/navbar' %>
-<div class="message_container">
+
+<div class="container message-container">
+
   <div class="row">
     <div class="col-sm-12 col-sm-offset-3">
       <div class="chat-header"><h4><%= @chat_room.name %></h4></div>
@@ -11,14 +13,14 @@
       <div id="create-message">
         <%= simple_form_for [ @chat_room, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
           <%= f.input :content, label: false %>
-          <div class="button">
-          <%= f.submit %>
-          </div>
+
+          <%= f.submit "Send", class: 'btn btn-primary mt-1 w-100' %>
+
         <% end %>
-      </div>
     </div>
   </div>
 </div>
+
 <% content_for :after_js do %>
 <script>
 
