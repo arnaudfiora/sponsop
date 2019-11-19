@@ -1,11 +1,15 @@
-<h1>All your conversations</h1>
 <div class="container container-messenger">
+<h1>All your conversations</h1>
+
+<br>
+
     <% @chat_rooms.each do |chatroom| %>
     <div class="chatroom">
-        <div class="chatroom-link">
+        <div class="chatroom-link ">
           <%= link_to chatroom.name, messengers_show_path(chatroom) %>
         </div>
           <img src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="channel-card-avatar">
     </div>
     <% end %>
 </div>
+

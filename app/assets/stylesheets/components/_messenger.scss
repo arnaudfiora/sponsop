@@ -2,29 +2,40 @@
 .container-messenger{
   display:flex;
   flex-direction: column;
+    width: 500px;
+  margin: 0 auto;
+  text-align: center;
+
 
 
 }
 .chatroom{
-  background-color: lightgrey;
-  border-radius: 30px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
   margin: 5px 0px 5px;
   width: 450px;
   display:flex;
   justify-content: space-between;
+   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   img {
     margin-left: 20px;
-    border-radius: 28px;
+    border-radius: 5px;
   }
 }
 
 .chatroom-link{
-  margin-top:30px;
+  margin-top:40px;
   margin-left: 30px;
   font-size:20px;
+   text-decoration: none;
+   color: black;
+
 }
 
 
 .chatroom:hover {
-    box-shadow: 0 0 20px #212227;
+    box-shadow: 0 0 5px #212227;
+     text-decoration: none;
   }
+
+
