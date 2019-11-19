@@ -1,11 +1,8 @@
 .message-container{
   width: 500px;
   margin: 0 auto;
-
-
-
-
 }
+
 .messages {
   font-size: 14px;
   color: #868686;
@@ -32,11 +29,13 @@
     }
   }
 }
+
 .message-content {
   background-color: #F7F7F7;
   border-radius: 3px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
+}
 
 #create-message {
   margin-top: 15px;
@@ -46,24 +45,24 @@
   border: 1px solid #ececec;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
 .message_content {
   margin-bottom: 0;
   border-radius: 30;
-
 }
+
 input.form-control {
   border: 1px solid #ECECEC;
   box-shadow: none;
   font-size: 14px;
   color: #868686;
 
-
   &:focus {
     outline: none;
     border: 1px solid blue;
-
   }
 }
+
 .chat-header {
   text-align:center;
   background-color: #4285f4;
@@ -71,13 +70,12 @@ input.form-control {
   padding: 10px 20px;
   margin-top: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
   h4 {
     margin: 0;
-
   }
 }
 
-.button{
+.button {
   margin-top: 10px;
-
 }
