@@ -1,15 +1,11 @@
 <div class="dashboard-banner">
   <h1 style="text-transform: uppercase"><%= current_user.company %></h1>
   <h2 class="animated bounce"><%= current_user.first_name %>'s Dashboard</h2>
+  <%= link_to new_campaign_path do %><i class="fas fa-plus new-campaign-button"></i><% end %>
 </div>
 
 <div class="dashboard-title">
-  <h2>Current campaigns - </h2>
-  <span class="dashboard-title-button">
-    <h2>
-    <%= link_to "Add one", new_campaign_path, class: "new-campaign-button"%>
-    </h2>
-  </span>
+  <h2>Current campaigns</h2>
 </div>
 
 <div class="dashboard-container">
