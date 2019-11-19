@@ -4,11 +4,14 @@
 </div>
 
 <div class="line-separator"><div class="line"></div></div>
-<div class="container container-conversations">
-<%= link_to "My conversations", messengers_index_path , class: "btn btn-primary btn-sm "%>
-</div>
+
 <div class="dashboard-title">
-  <h2>Current campaigns -<%= link_to "Add one", new_campaign_path, class: "new-campaign-button"%></h2>
+  <h2>Current campaigns - </h2>
+  <span class="dashboard-title-button">
+    <h2>
+    <%= link_to "Add one", new_campaign_path, class: "new-campaign-button"%>
+    </h2>
+  </span>
 </div>
 
 <div class="dashboard-container">
@@ -34,3 +37,5 @@
 <div class="line-separator">
   <div class="line"></div>
 </div>
+
+<%= render 'shared/footer' %>

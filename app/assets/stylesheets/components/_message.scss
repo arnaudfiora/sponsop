@@ -28,6 +28,7 @@
     flex-direction: row-reverse;
     .message-content {
       background-color: #F2F9FC;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
   }
 }
@@ -36,15 +37,6 @@
   border-radius: 3px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
-
-
-
-}
-.avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-}
 
 #create-message {
   margin-top: 15px;
@@ -69,7 +61,7 @@ input.form-control {
   &:focus {
     outline: none;
     border: 1px solid blue;
-    box-shadow: none;
+
   }
 }
 .chat-header {
@@ -81,6 +73,7 @@ input.form-control {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   h4 {
     margin: 0;
+
   }
 }
 

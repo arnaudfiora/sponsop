@@ -23,7 +23,7 @@
       height: 100%; // to remove when content in filters
       border: 1px solid grey;
       // background-color: rgba(78, 128, 152, .5);
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(78, 128, 152, .1);
       border-radius: 5px;
 
       position: sticky;
@@ -47,12 +47,5 @@
   width: 900px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-
-// FOR CHANNEL SHOW PAGE
-
-.channel-info-container {
-  display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
