@@ -1,5 +1,5 @@
 .message-container{
-  width: 500px;
+  width: 550px;
   margin: 0 auto;
 }
 
@@ -25,7 +25,7 @@
     flex-direction: row-reverse;
     .message-content {
       background-color: #F2F9FC;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      // box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
   }
 }
