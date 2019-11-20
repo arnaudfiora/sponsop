@@ -34,7 +34,7 @@
     // background-color: lightgrey;
     border-radius: 5px;
     border: 1px solid #212227;
-    margin: 0 5px;
+    margin: 5px;
 
     width: 400px;
     padding: 10px 20px;
@@ -42,7 +42,11 @@
     text-align: center;
     color: #212227;
 
-    position: relative
+    position: relative;
+
+    .campaign-card-content {
+      color: white;
+    }
   }
 
   .campaign-card:hover {
@@ -64,3 +68,5 @@
 .link-to.edit:hover {
   color: orange;
 }
+
+

@@ -1,13 +1,17 @@
 class CampaignsController < ApplicationController
   before_action :set_campaign, only: %I[edit update destroy]
 
+  def index
+
+  end
+
   def show
     @campaign = Campaign.find(params[:id])
     @results = filter_results(@campaign)
   end
 
   def new
-    @campaign = Campaign.new
+    @campaign = Campaign.new()
     @campaign.build_age
   end
 
@@ -22,12 +26,22 @@ class CampaignsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    set_campaign
+    @campaign_photo = @campaign.photo
+  end
 
   def update
+    if @campaign.photo != campaign_params[:photo]
     @campaign.update(campaign_params)
     @campaign.save
     redirect_to campaign_path(@campaign)
+    elsif campaign_params[:photo] == ""
+      campaign_params[:photo] = @campaign.photo
+      @campaign.update(campaign_params)
+      @campaign.save
+      redirect_to campaign_path(@campaign)
+    end
   end
 
   def destroy
@@ -42,8 +56,9 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :period, :gender, :description, interest_ids: [], age_attributes: {})
+    params.require(:campaign).permit(:name, :period, :gender, :description, :title, :body, :photo, interest_ids: [], age_attributes: {})
   end
+
 
   def filter_results(campaign)
     first_results = first_filter(campaign)
