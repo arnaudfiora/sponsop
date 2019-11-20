@@ -1,15 +1,24 @@
-<div class="container container-messenger">
 <h1>All your conversations</h1>
+<div class="container container-messenger">
 
-<hr>
-
-    <% @chat_rooms.each do |chatroom| %>
-    <div class="chatroom">
-        <div class="chatroom-link ">
-          <%= link_to chatroom.name, chat_room_path(chatroom) %>
-        </div>
-          <img src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="channel-card-avatar">
-    </div>
-    <% end %>
+    <% if current_user.is_brand %>
+      <% @chat_rooms_brand.each do |chatroom| %>
+      <div class="chatroom">
+          <div class="chatroom-link">
+            <%= link_to chatroom.name, chat_room_path(chatroom) %>
+          </div>
+            <img src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="channel-card-avatar">
+      </div>
+      <% end %>
+    <% else %>
+      <% @chat_rooms_influencer.each do |chatroom| %>
+      <div class="chatroom">
+          <div class="chatroom-link">
+            <%= link_to chatroom.user.first_name, chat_room_path(chatroom) %>
+          </div>
+            <img src="<%= chatroom.user["avatar"] %>" alt="" class="channel-card-avatar">
+      </div>
+      <% end %>
+  
 </div>
 
