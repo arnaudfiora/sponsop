@@ -1,11 +1,38 @@
-<h1>All your conversations</h1>
-<div class="container container-messenger">
-    <% @chat_rooms.each do |chatroom| %>
-    <div class="chatroom">
-        <div class="chatroom-link">
-          <%= link_to chatroom.name, messengers_show_path(chatroom) %>
-        </div>
-          <img src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="channel-card-avatar">
-    </div>
-    <% end %>
+<%= render 'shared/navbar' %>
+
+<div class="wrapper-messenger">
+
+  <div class="container-messenger">
+
+      <% if current_user.is_brand %>
+
+        <% @chat_rooms_brand.each do |chatroom| %>
+          <%= link_to chat_room_path(chatroom), class: 'chatroom-link' do %>
+            <div class="chatroom">
+              <img src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="avatar-large">
+              <p><%= chatroom.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+
+      <% else %>
+
+        <% @chat_rooms_influencer.each do |chatroom| %>
+          <%= link_to chat_room_path(chatroom), class: 'chatroom-link' do %>
+            <div class="chatroom">
+              <img src="<%= chatroom.user["avatar"] %>" alt="" class="avatar-large">
+              <p><%= chatroom.user.first_name %></p>
+            </div>
+          <% end %>
+        <% end %>
+
+      <% end %>
+
+  </div>
+
+  <div class="container-chatroom">
+
+    <p>TEMPORARY</p>
+  </div>
+
 </div>
