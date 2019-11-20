@@ -43,13 +43,11 @@ ActiveRecord::Schema.define(version: 2019_11_20_111657) do
     t.string "period"
     t.bigint "user_id"
     t.bigint "age_id"
-    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
     t.string "photo"
     t.index ["age_id"], name: "index_campaigns_on_age_id"
-    t.index ["article_id"], name: "index_campaigns_on_article_id"
     t.index ["user_id"], name: "index_campaigns_on_user_id"
   end
 

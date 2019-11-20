@@ -8,5 +8,6 @@ class Campaign < ApplicationRecord
   GENDER = ['Male', 'Female', 'Both']
 
   validates :gender, inclusion: { in: GENDER }
+  validates :name, :description, :period, presence: true
   accepts_nested_attributes_for :age
 end
