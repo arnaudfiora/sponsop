@@ -1,24 +1,27 @@
 <div class="channel-form-wrapper">
-  <div class="channel-form-content">
 
-    <h1>Create a new campaign</h1>
+  <h1>Create a new campaign</h1>
 
-    <%= simple_form_for (@campaign), remote: true do |f| %>
+  <%= simple_form_for (@campaign), remote: true do |f| %>
 
-      <h3>About your new campaign</h3>
+    <div class="channel-form-content create-campaign active">
 
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input (:period),
-                as:'string',
-                input_html: {
-                  class: "datepicker"
-                }%>
+        <h3>About your new campaign</h3>
 
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input (:period),
+                  as:'string',
+                  input_html: {
+                    class: "datepicker"
+                  }%>
+        <p id="next" class="btn btn-primary w-100">Next</p>
+        <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-100 my-2" %>
+    </div>
+
+    <div class="channel-form-content create-campaign">
       <h3>Who are your targetted consumers?</h3>
-
       <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false %>
-
       <div class="form-group">
         <label class="required">Age range(s)<abbr title="required">*</abbr> </label>
         <%= f.simple_fields_for :age do |ff| %>
@@ -32,10 +35,10 @@
           <%= ff.input :more_65, label: "More than 65" %>
         <% end %>
       </div>
-
-      <%= f.submit "Submit", class: "btn btn-primary w-100" %>
+      <%= f.submit "Next", class: "btn btn-primary w-100" %>
       <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-100 my-2" %>
-    <% end %>
-  </div>
+    </div>
+
+  <% end %>
 
 </div>

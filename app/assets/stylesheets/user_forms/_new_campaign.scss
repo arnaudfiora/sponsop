@@ -1,0 +1,23 @@
+#new_campaign{
+  position: relative;
+  background: blue;
+  width: 90vw;
+  height: 80vh;
+}
+
+.channel-form-wrapper{
+  position: relative;
+}
+
+.channel-form-content.create-campaign{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.channel-form-content.create-campaign.active{
+  opacity: 1;
+  visibility: visible;
+}
