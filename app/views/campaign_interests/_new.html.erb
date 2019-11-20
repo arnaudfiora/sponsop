@@ -1,0 +1,26 @@
+<div class="interest-wrapper">
+
+<ul>
+  <% if !@campaign.interests.nil? %>
+    <% @campaign.interests.each do |interest| %>
+
+      <li style='color: white;'><%= interest.name %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= simple_form_for( CampaignInterest.new , url: campaign_campaign_interests_path([@campaign]), html: { method: :post }, remote: true ) do |f| %>
+  <div class="form-inline">
+    <div class="form-inputs form-inline">
+      <%= f.association :interest, label: false %>
+    </div>
+    <div class="form-actions form-inline">
+      <%= f.submit "+", class: "btn btn-secondary" %>
+    </div>
+  </div>
+<% end %>
+
+<!-- Button pour aller vers la show page de campaign ! -->
+<%= link_to 'Go to compaign', campaign_path(@campaign), class: 'btn btn-primary' %>
+
+</div>

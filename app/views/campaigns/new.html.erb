@@ -3,7 +3,7 @@
 
     <h1>Create a new campaign</h1>
 
-    <%= simple_form_for (@campaign) do |f| %>
+    <%= simple_form_for (@campaign), remote: true do |f| %>
 
       <h3>About your new campaign</h3>
 
@@ -16,6 +16,7 @@
                 }%>
 
       <h3>Who are your targetted consumers?</h3>
+
       <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false %>
 
       <div class="form-group">
@@ -25,14 +26,12 @@
           <%= ff.input :age_12_18, label: "12-18" %>
           <%= ff.input :age_19_25, label: "19-25" %>
           <%= ff.input :age_26_35, label: "26-35" %>
-          <%= ff.input :age_36_45, label: "26-45" %>
+          <%= ff.input :age_36_45, label: "36-45" %>
           <%= ff.input :age_46_55, label: "46-55" %>
           <%= ff.input :age_56_65, label: "56-65" %>
           <%= ff.input :more_65, label: "More than 65" %>
         <% end %>
       </div>
-
-      <%= f.association :interests,  as: :check_boxes, include_blank: false, label: "Your targetted consumers are interested about (select up to 5):"%>
 
       <%= f.submit "Submit", class: "btn btn-primary w-100" %>
       <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-100 my-2" %>

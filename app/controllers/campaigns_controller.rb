@@ -15,14 +15,20 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      flash[:notice] = "You successfully created the campaign '#{@campaign.name}'"
-      redirect_to dashboard_path
+      respond_to do |format|
+        flash[:notice] = "You successfully created the campaign '#{@campaign.name}'"
+        format.html { redirect_to new_campaign_path(@campaign) }
+        format.js
+      end
     else
       render :new
     end
   end
 
-  def edit; end
+  def edit
+    @campaign_interest = CampaignInterest.new
+    @interests = Interest.all
+  end
 
   def update
     @campaign.update(campaign_params)
@@ -42,7 +48,7 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-    params.require(:campaign).permit(:name, :period, :gender, :description, interest_ids: [], age_attributes: {})
+    params.require(:campaign).permit(:name, :period, :gender, :description, age_attributes: {})
   end
 
   def filter_results(campaign)
