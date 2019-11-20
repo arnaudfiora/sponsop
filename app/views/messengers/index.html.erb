@@ -1,5 +1,6 @@
 <h1>All your conversations</h1>
 <div class="container container-messenger">
+
     <% if current_user.is_brand %>
       <% @chat_rooms_brand.each do |chatroom| %>
       <div class="chatroom">
@@ -18,5 +19,6 @@
             <img src="<%= chatroom.user["avatar"] %>" alt="" class="channel-card-avatar">
       </div>
       <% end %>
-    <% end %>
+  
 </div>
+

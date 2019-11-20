@@ -3,18 +3,21 @@
 <div class="banner" id="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2774&q=80');">
   <div class="container-banner">
     <h1><span class="type"></span></h1>
-    <p>Connecting brands and content creators</p>
-    <a id="learn-more-button" href="#">Learn more</a>
+    <p>We Connect brands and content creators with pure simplicity</p>
+    <a id="learn-more-button" class="animated jello" href="#">Learn more</a>
   </div>
 </div>
 
-<div class="container cards-container text-center">
+<div class="container cards-container text-center"
+     data-aos="zoom-in">
+
   <h2> As a brand representative </h2>
 
   <div class="row justify-content-center">
 
     <div class="col-sm-4">
-      <div class="card-home">
+      <div class="card-home"
+           data-aos="fade-up">
         <div class="card-home-icon">
           <%= image_tag "search.svg" %>
         </div>
@@ -27,7 +30,8 @@
     </div>
 
     <div class="col-sm-4">
-      <div class="card-home">
+      <div class="card-home"
+           data-aos="fade-up">
         <div class="card-home-icon">
           <%= image_tag "collab.svg" %>
         </div>
@@ -39,7 +43,8 @@
     </div>
 
     <div class="col-sm-4">
-      <div class="card-home">
+      <div class="card-home"
+           data-aos="fade-up">
         <div class="card-home-icon">
           <%= image_tag "track.svg" %>
         </div>
@@ -55,16 +60,20 @@
 
 <hr>
 
-<div class="container partners-container text-center">
+<div class="container partners-container text-center"
+     data-aos="zoom-in-left">
+
   <h2>They trust SponsOp</h2>
 
-  <div class="brand-logo-container">
+  <div class="brand-logo-container"
+       >
     <img alt="#" src="https://dl.be/uploads/2019/08/icon-512x512.png">
     <img alt="#" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/ICE-WATCH-logo.svg/315px-ICE-WATCH-logo.svg.png">
     <img alt="#" src="https://www.schoenenverduyn.be/Cached/108052/resize/2000x400/Veja.png">
     <img alt="#" src="https://seeklogo.com/images/C/Cote_d_Or-logo-29637A7AF2-seeklogo.com.png">
   </div>
-  <div class="brand-logo-container">
+  <div class="brand-logo-container"
+      >
     <img alt="#" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nivea_Logo.png/776px-Nivea_Logo.png">
     <img alt="#" src="https://s3.amazonaws.com/igniteopm-prod/wp-content/uploads/2019/03/15144603/skillshare.png">
     <img alt="#" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Volkswagen_logo_2019.svg/600px-Volkswagen_logo_2019.svg.png">
@@ -74,7 +83,8 @@
 
 <hr>
 
-<div class="container cards-container text-center">
+<div class="container cards-container text-center"
+     data-aos="zoom-in-right">
   <h2> As a content creator </h2>
 
   <div class="row justify-content-center">
@@ -120,7 +130,8 @@
 
 <hr>
 
-<div class="container testimonials-container">
+<div class="container testimonials-container"
+     data-aos="zoom-out">
   <h2 class="text-center">What they say about SponsOp</h2>
 
   <div class="testimonial">
@@ -168,5 +179,3 @@
 </div> -->
 
 <%= render 'shared/footer' %>
-
-<%= javascript_pack_tag 'home' %>

@@ -1,9 +1,8 @@
-<!-- THIS IS THE RESULTS PAGE - WHEN A BRAND CLICKS ON A CAMPAIGN !!! -->
+<!-- THIS IS THE RESULTS PAGE - WHEN A BRAND CLICKS ON A CAMPAIGN FROM ITS DASHBOARD !!! -->
 
 <%= render 'shared/navbar' %>
 
 <div class="results-wrapper">
-
   <h2><%= @results.length %> channels matching your campaign's criteria</h2>
 
   <div class="results-container">
@@ -13,6 +12,7 @@
         <h3>Change your campaign's filters</h3>
         <%= f.input :gender, :as => :select, :collection => Campaign::GENDER, include_blank: false, label: "• Gender:" %>
         <br>
+
         <div class="form-group">
           <label>• Age range(s):</label>
           <%= f.simple_fields_for :age do |ff| %>
@@ -67,6 +67,7 @@
 
       <% end %>
     </div>
+
   </div>
 </div>
 
