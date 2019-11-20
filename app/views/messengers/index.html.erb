@@ -7,32 +7,95 @@
       <% if current_user.is_brand %>
 
         <% @chat_rooms_brand.each do |chatroom| %>
-          <%= link_to chat_room_path(chatroom), class: 'chatroom-link' do %>
-            <div class="chatroom">
-              <img src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="avatar-large">
-              <p><%= chatroom.name %></p>
+
+            <div class="chatroom"  data-target-id="<%= chatroom.id %>" >
+              <img data-target-id="<%= chatroom.id %>" src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="avatar-large">
+              <p data-target-id="<%= chatroom.id %>" ><%= chatroom.name %></p>
+
             </div>
-          <% end %>
+
         <% end %>
 
       <% else %>
 
         <% @chat_rooms_influencer.each do |chatroom| %>
-          <%= link_to chat_room_path(chatroom), class: 'chatroom-link' do %>
-            <div class="chatroom">
-              <img src="<%= chatroom.user["avatar"] %>" alt="" class="avatar-large">
+            <div class="chatroom-message">
+                            <img src="<%= chatroom.user["avatar"] %>" alt="" class="avatar-large">
               <p><%= chatroom.user.first_name %></p>
             </div>
-          <% end %>
         <% end %>
 
       <% end %>
 
   </div>
 
-  <div class="container-chatroom">
+  <!-- <p class="data-replaced">TEMP</p> -->
 
-    <p>TEMPORARY</p>
+  <div class="container-chatroom">
+    <div class="container message-container">
+      <% @chat_rooms_brand.each_with_index do |chat_room, i| %>
+      <div class="row chat_room_content" style=" <%= 'display:none' unless i == 0  %>" id="chat_room-<%= chat_room.id  %>">
+        <div class="col-sm-12 col-sm-offset-3">
+          <!-- <p class="data-replaced">TEMP</p> -->
+          <div class="chat-header"><h4><%= chat_room.name %></h4></div>
+          <div class="messages">
+            <% chat_room.messages.each do |message| %>
+              <%= render partial: "messages/message", locals: { message: message, user_is_messages_author: current_user == message.user } %>
+            <% end %>
+          </div>
+          <div id="create-message">
+            <%= simple_form_for [ chat_room, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+              <%= f.input :content, label: false, input_html: { class: "message-input"} %>
+
+              <%= f.submit "Send", class: 'btn btn-primary mt-1 w-100' %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+  <% end %>
+    <% content_for :after_js do %>
+    <script>
+
+    function scrollLastMessageIntoView() {
+      const messages = document.querySelectorAll('.message');
+      const lastMessage = messages[messages.length - 1];
+
+      if (lastMessage !== undefined) {
+        lastMessage.scrollIntoView();
+      }
+    }
+
+    scrollLastMessageIntoView()
+        <% @chat_rooms_brand.each do |chat_room| %>
+        App['chat_room_<%= chat_room.id %>'] = App.cable.subscriptions.create(
+          { channel: 'ChatRoomsChannel', chat_room_id: <%= chat_room.id %> },
+          {
+            received: (data) => {
+              console.log(data)
+               if (+data.current_user_id !== +<%= current_user.id %>) {
+                let messagesContainerWrap = document.querySelector(`#chat_room-${data.chat_room_id}`)
+                console.log(messagesContainerWrap)
+                let messagesContainer = messagesContainerWrap.querySelector('.messages');
+                console.log( messagesContainer)
+                messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+                scrollLastMessageIntoView();
+              }
+              }
+            })
+        <% end %>
+
+        // document.querySelector("message_content").addEventListener("keyup", (event) => {
+        //       console.log(event.key)
+        //     if(event.key == "81"){
+        //           document.querySelector("form").submit()
+
+        //       }
+
+        // })
+      </script>
+    <% end %>
+
   </div>
 
 </div>
