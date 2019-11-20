@@ -1,4 +1,5 @@
 class Campaign < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   belongs_to :age
   has_many :campaign_interests
