@@ -1,5 +1,5 @@
 meta_product_name: "SponsOp"
 meta_title: "SponsOp - Influence your brands "
 meta_description: "We Connect brands and content creators with pure simplicity"
-meta_image: "influencer_image.jpeg" # should exist in `app/assets/images/`
+meta_image: "influencer-image.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
