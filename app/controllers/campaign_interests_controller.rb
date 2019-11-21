@@ -6,13 +6,12 @@ class CampaignInterestsController < ApplicationController
     @campaign_interest.campaign = @campaign
     if @campaign_interest.save
       respond_to do |format|
-        flash[:notice] = "created interest"
         format.html { redirect_to new_campaign_path(@campaign) }
         format.js
       end
     else
       respond_to do |format|
-        flash[:notice] = "error error"
+        flash[:notice] = "Error!"
       end
     end
   end
