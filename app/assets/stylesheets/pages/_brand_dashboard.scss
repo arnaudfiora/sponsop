@@ -41,6 +41,8 @@
 
     text-align: center;
     color: #212227;
+    background-size: cover;
+    background-position: center;
 
     position: relative;
 
@@ -52,17 +54,30 @@
   .campaign-card:hover {
     box-shadow: 0 0 20px #212227;
   }
+}
 
-  .campaign-card-actions {
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%)
-  }
+.campaign-card-actions.edit {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.campaign-card-actions.delete {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+
+  font-size: 20px;
+  transform: rotate(45deg);
 }
 
 .link-to.delete:hover {
   color: red;
+}
+
+.link-to.edit {
+  color: white;
 }
 
 .link-to.edit:hover {

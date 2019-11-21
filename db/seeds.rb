@@ -1036,7 +1036,7 @@ Channel.create!(
 
 counter += 1
 Channel.create!(
-  name: "dimitrivegasandlikemike",
+  name: "dimitrivegas",
   url: "https://www.instagram.com/dimitrivegasandlikemike/?utm_source=ig_embed",
   gender: gender.sample,
   user: User.find(counter),

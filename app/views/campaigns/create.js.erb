@@ -1,0 +1,8 @@
+// Refresh your list interests in new form
+var interestForm = (innerHTML) => {
+  const form = document.querySelector('.channel-form-wrapper')
+  console.log(form)
+  form.innerHTML = innerHTML
+}
+
+interestForm("<%= j render 'campaign_interests/new' %>")

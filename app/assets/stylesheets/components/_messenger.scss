@@ -1,9 +1,17 @@
 .wrapper-messenger {
   width: 900px;
+  height: 85vh;
+
+  overflow: scroll;
+
   margin: 0 auto;
   padding-top: 20px;
 
   display: flex;
+
+  .container-messenger {
+    padding-top: 10px;
+  }
 }
 
 .chatroom-link, .chatroom-link:hover {
@@ -14,8 +22,8 @@
 .chatroom {
   display: flex;
   align-items: center;
-  border: 1px solid black;
-  background-color: orange;
+  border: .5px solid lightgrey;
+  border-radius: 1px;
   padding: 15px 10px;
   width: 350px;
 
@@ -26,49 +34,12 @@
   }
 }
 
+.chatroom-bg-blue {
+  background-color: rgba(65, 133, 244, 1);
+  color: white;
+}
+
 .container-chatroom {
   height: auto;
   width: 550px;
-  background-color: red;
 }
-
-
-
-
-
-
-// .container-messenger{
-//   display:flex;
-//   flex-direction: column;
-//     width: 500px;
-//   margin: 0 auto;
-//   text-align: center;
-
-// }
-// .chatroom{
-//   background-color: white;
-//   border-radius: 5px;
-//   margin: 5px 0px 5px;
-//   width: 500px;
-//   display:flex;
-//   justify-content: space-between;
-//    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-//   img {
-//     margin-left: 20px;
-//     border-radius: 5px;
-//   }
-// }
-
-// .chatroom-link{
-//   margin-top:40px;
-//   margin-left: 30px;
-//   font-size:20px;
-//    text-decoration: none;
-//    color: black;
-
-// }
-
-// .chatroom:hover {
-//     box-shadow: 0 0 5px #212227;
-//      text-decoration: none;
-//   }

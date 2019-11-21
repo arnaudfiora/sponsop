@@ -18,7 +18,7 @@
     <% if end_date > user_date %>
       <%= link_to campaign_path(campaign), class: 'link-to' do %>
         <div class="campaign-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= campaign.photo %>
-); background-size:cover;">
+)">
 
           <div class="campaign-card-content">
             <h3 style="font-size: 20px;"><%= campaign.name %></h3>
@@ -26,9 +26,11 @@
             <p><%= campaign.period %></p>
           </div>
 
-          <div class="campaign-card-actions">
+          <div class="campaign-card-actions edit">
             <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
-            <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
+          </div>
+          <div class="campaign-card-actions delete">
+            <%= link_to '+', campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' %>
           </div>
 
         </div>
@@ -64,9 +66,11 @@
             <p><%= campaign.period %></p>
           </div>
 
-          <div class="campaign-card-actions">
+          <div class="campaign-card-actions edit">
             <%= link_to edit_campaign_path(campaign), class: 'link-to edit' do %><i class="far fa-edit"></i><% end %>
-            <%= link_to campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' do %><i class="fas fa-trash"></i><% end %>
+          </div>
+          <div class="campaign-card-actions delete">
+            <%= link_to '+', campaign_path(campaign), method: :delete, data: { confirm: "Are you sure?" }, class: 'link-to delete' %>
           </div>
 
         </div>
