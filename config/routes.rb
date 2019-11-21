@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   mount ActionCable.server => "/cable"
 
   resources :messengers, only:[:index,:show]
-  resources :contracts, only:[:index,:show,:new, :create]
+  resources :contracts, only:[:index,:show,:new, :create,:edit,:update]
 end

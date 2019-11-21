@@ -4,11 +4,13 @@ class ContractsController < ApplicationController
   end
 
   def show
+    @contract = Contract.find(params[:id])
   end
 
   def new
     @chat_room = ChatRoom.find(params[:format])
   end
+
 
   def create
     @contract = Contract.new
@@ -32,4 +34,25 @@ class ContractsController < ApplicationController
   # def contract_params
   #   params.require(:contract).permit(:name, :address, :description)
   # end
+
+
+def edit
+    @contract = Contract.find(params[:id])
+  end
+
+  def update
+    @contract = Contract.find(params[:id])
+    @contract.update(contract_params)
+
+    if @contract.save
+      redirect_to contracts_path
+    else
+      render :edit
+    end
+  end
+  private
+ def contract_params
+  params.require(:contract).permit(:validated)
+ end
+
 end

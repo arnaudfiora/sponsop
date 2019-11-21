@@ -5,7 +5,9 @@ class CreateContracts < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :address
       t.string :email
+      t.string :validated, default: "Pending"
       t.references :user
+
 
       t.timestamps
     end

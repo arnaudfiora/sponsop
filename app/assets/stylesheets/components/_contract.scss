@@ -1,0 +1,73 @@
+.new-contract-button {
+  position: absolute;
+  bottom: -38.5px;
+  right: 100px;
+
+  color: white;
+  background-color: orange;
+  // border: 1px solid rgb(32, 33, 39);
+  border-radius: 50%;
+
+  font-size: 40px;
+
+  padding: 17.5px 20px;
+}
+
+.new-contract-button:hover {
+  transform: scale(1.1);
+}
+
+.dashboard-container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .link-to {
+    text-decoration: none;
+    color: black;
+  }
+
+  .contract-card {
+    // background-color: lightgrey;
+    border-radius: 5px;
+    border: 1px solid #212227;
+    margin: 5px;
+
+    width: 400px;
+    padding: 10px 20px;
+
+    text-align: center;
+    color: #212227;
+
+    position: relative;
+
+    .contract-card-content {
+      color: black;
+    }
+  }
+
+  .contract-card:hover {
+    box-shadow: 0 0 20px #212227;
+  }
+
+  .contract-card-actions {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+}
+
+.link-to.delete:hover {
+  color: red;
+}
+
+.link-to.edit:hover {
+  color: orange;
+}
+
+
+

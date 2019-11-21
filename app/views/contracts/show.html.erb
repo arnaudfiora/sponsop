@@ -1,2 +1,7 @@
-<h1>Contracts#show</h1>
-<p>Find me in app/views/contracts/show.html.erb</p>
+<h1>Your contract <%= @contract.name %></h1>
+<div class="contract">
+  <div class="contract-content">
+    <%= @contract.description %>
+    <%= @contract.address %>
+  </div>
+</div>

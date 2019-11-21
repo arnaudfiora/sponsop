@@ -1,28 +1,11 @@
+<%= render 'shared/navbar' %>
 <h1>Contracts#index</h1>
-<p>Fin</p>
-<% @contracts.each do |contract| %>
-  <div><%= contract.name %></div>
-  <div><%= contract.description %></div>
-  <div><%= contract.address %></div>
 
+<% if current_user.is_brand == true %>
+<%= render 'shared/brand_contracts' %>
+<% else %>
+<%= render 'shared/creator_contracts' %>
 <% end %>
 
 
-<div class="dashboard-title">
-  <h2>Current contracts</h2>
-</div>
-
-<div class="dashboard-container">
-
-  <% @contracts.each do |contract| %>
-      <%= link_to contract_path(contract), class: 'link-to' do %>
-        <div class="campaign-card" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= campaign.photo %>
-); background-size:cover;">
-
-          <div class="campaign-card-content">
-            <h3 style="font-size: 20px;"><%= contract.name %></h3>
-            <p><%= contract.description %></p>
-            <p><%= contract.address %></p>
-          </div>
-  <% end %>
 </div>
