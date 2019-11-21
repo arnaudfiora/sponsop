@@ -233,7 +233,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.2.3)
-  redis (= 3.0.0)
+  redis
   sassc-rails
   simple_form
   spring
