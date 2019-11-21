@@ -20,7 +20,7 @@
 
         <% @chat_rooms_influencer.each do |chatroom| %>
             <div class="chatroom-message">
-                            <img src="<%= chatroom.user["avatar"] %>" alt="" class="avatar-large">
+              <img src="<%= chatroom.user["avatar"] %>" alt="" class="avatar-large">
               <p><%= chatroom.user.first_name %></p>
             </div>
         <% end %>
@@ -85,12 +85,13 @@
             })
         <% end %>
 
-        // document.querySelector("message_content").addEventListener("keyup", (event) => {
-        //       console.log(event.key)
-        //     if(event.key == "81"){
+        document.querySelector("#message-content").addEventListener("keyup", (event) => {
+            console.log(event.key)
+
+        //     if(event.key == "Enter"){
         //           document.querySelector("form").submit()
 
-        //       }
+        })
 
         // })
       </script>

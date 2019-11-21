@@ -60,13 +60,8 @@ class CampaignsController < ApplicationController
   end
 
   def campaign_params
-<<<<<<< HEAD
-    params.require(:campaign).permit(:name, :period, :gender, :description, age_attributes: {})
-=======
     params.require(:campaign).permit(:name, :period, :gender, :description, :title, :body, :photo, interest_ids: [], age_attributes: {})
->>>>>>> master
   end
-
 
   def filter_results(campaign)
     first_results = first_filter(campaign)
