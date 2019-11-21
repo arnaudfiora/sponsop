@@ -1,7 +1,5 @@
 .results-wrapper {
   padding-top: 20px;
-  // background-color: rgba(78, 128, 152, .3);
-  min-height: 100vh;
 
   h2 {
     text-align: center;
@@ -21,10 +19,8 @@
 
       width: 250px;
       height: 100%; // to remove when content in filters
-      border: 1px solid grey;
-      // background-color: rgba(78, 128, 152, .5);
-      background-color: rgba(78, 128, 152, .1);
-      border-radius: 5px;
+      // background-color: rgba(78, 128, 152, .1);
+
 
       position: sticky;
       top: 80px;
@@ -43,9 +39,13 @@
 }
 
 .channels-cards {
-  // border: 1px solid grey;
   width: 900px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: auto;
+
 }
+
+
+

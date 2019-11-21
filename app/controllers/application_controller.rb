@@ -11,3 +11,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :is_brand, :company, :avatar])
   end
 end
+
+def default_url_options
+  { host: ENV["DOMAIN"] || "localhost:3000" }
+end
