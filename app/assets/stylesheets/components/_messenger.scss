@@ -24,7 +24,6 @@
   align-items: center;
   border: .5px solid lightgrey;
   border-radius: 1px;
-  // background-color: orange;
   padding: 15px 10px;
   width: 350px;
 
@@ -36,11 +35,11 @@
 }
 
 .chatroom-bg-blue {
-  background-color: rgba(65, 133, 244, .5);
+  background-color: rgba(65, 133, 244, 1);
+  color: white;
 }
 
 .container-chatroom {
   height: auto;
   width: 550px;
-  // background-color: red;
 }
