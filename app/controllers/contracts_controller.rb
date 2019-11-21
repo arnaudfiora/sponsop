@@ -25,7 +25,7 @@ class ContractsController < ApplicationController
     @contract_users << user_2
     @contract.users = @contract_users
     if @contract.save!
-      redirect_to contracts_index_path
+      redirect_to dashboard_path(@contract)
     end
   end
 

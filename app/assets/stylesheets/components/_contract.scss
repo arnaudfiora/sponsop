@@ -69,5 +69,16 @@
   color: orange;
 }
 
+.line-separator {
+  width: 100%;
+  text-align: center;
+
+  .line {
+    display: inline-block;
+    width: 90%;
+    height: 1px;
+    border-bottom: 1px solid $red;
+  } }
+
 
 
