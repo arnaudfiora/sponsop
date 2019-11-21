@@ -1,9 +1,11 @@
 <div id="container">
 
-<h1>Validate your contract</h1>
-<%= simple_form_for (@contract) do |f| %>
-  <%= f.input :validated, :as => :select, :collection => Contract::STATUS, include_blank: false %>
-  <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
-<% end %>
+  <div class="accept-contract-form">
+  <%= simple_form_for (@contract) do |f| %>
+  <h1>Validate your contract</h1>
+    <%= f.input :validated, :as => :select, :collection => Contract::STATUS, include_blank: false %>
+    <%= f.submit "Submit", class: "btn btn-primary btn-block" %>
+  <% end %>
+  </div>
 </div>
 
