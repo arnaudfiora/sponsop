@@ -4,14 +4,14 @@
 
 <div class="dashboard-container">
 
-  <% @contracts.each_with_index do |contract, index| %>
+  <% @contracts.order(created_at: :desc).each_with_index do |contract, index| %>
 
     <div class="contract-card">
 
       <img src="<%= contract.users.where(is_brand: false).first.avatar  %>" class="avatar-large" alt="">
 
       <div class="contract-card-content">
-        <p><small>Contract #<%= index + 1 %></small></p>
+        <p><small>Contract #<%= @contracts.length - index %></small></p>
         <p><strong><%= contract.users.where(is_brand: false).first.first_name %></strong></p>
         <p><%= contract['campaign'] %> - <%= contract.date %></p>
 
