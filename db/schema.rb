@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_20_111657) do
+ActiveRecord::Schema.define(version: 2019_11_21_105248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,21 @@ ActiveRecord::Schema.define(version: 2019_11_20_111657) do
     t.index ["user_id"], name: "index_chat_rooms_on_user_id"
   end
 
+  create_table "contracts", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "address"
+    t.string "email"
+    t.string "campaign"
+    t.string "photo"
+    t.date "date"
+    t.string "validated", default: "Pending"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_contracts_on_user_id"
+  end
+
   create_table "interests", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -104,6 +119,15 @@ ActiveRecord::Schema.define(version: 2019_11_20_111657) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_messengers_on_user_id"
+  end
+
+  create_table "user_contracts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "contract_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contract_id"], name: "index_user_contracts_on_contract_id"
+    t.index ["user_id"], name: "index_user_contracts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

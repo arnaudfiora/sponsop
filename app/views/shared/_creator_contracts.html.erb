@@ -1,0 +1,28 @@
+<div class="dashboard-title">
+  <h2>Current contracts</h2>
+  <p></p>
+</div>
+
+<div class="dashboard-container">
+        <% @contracts.each_with_index do |contract,index| %>
+          <%= link_to contract_path(contract), class: 'link-to' do %>
+          <div class="contract-card">
+            <div class="contract-card-content">
+              <p> Contract number <%= index + 1 %></p>
+              <h3 style="font-size: 20px;"><%= contract.name %></h3>
+              <%=contract['campaign'] %>
+              <p><%= contract.description %></p>
+              <p><%= contract.address %></p>
+            </div>
+            <div class="contract-actions">
+            <% if contract.validated == "Confirmed" %>
+              <p style="font-weight: bold; color: green">You accepted this contract</p>
+            <% elsif contract.validated == "Declined" %>
+              <p style="font-weight: bold; color: red">You declined this contract</p>
+            <% else %>Pending contract</p>
+            <%= link_to "Accept or Refuse", edit_contract_path(contract), class: "btn btn-primary" %>
+            <% end %>
+              </div>
+            <% end %>
+          </div>
+         <% end %>

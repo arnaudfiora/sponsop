@@ -1,0 +1,21 @@
+<h1>New Contract</h1>
+
+
+<div class="form-contract-wrapper">
+  <div class="form-content form-contract-content">
+      <form action="/contracts" method="post">
+      <br>Name:<input type="string" name="name">
+      <br>Description:<input type="text" name="Description">
+      <br>Address:<input type="text" name="Address">
+      <br><select name="campaign" size="<%=  Campaign.all.count %>">
+        <%= @campaigns.each do |campaign| %>
+       <option value="<%= campaign.id %>"><%= campaign.name %></option>  %>
+        <% end %>
+        </select>
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+      <input type="hidden" name="chat_room_id" value="<%= @chat_room.id %>"/>
+      <button class= " button-contract-submit"type="submit">Submit</button>
+      </form>
+      <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-30 my-2" %>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+.new-contract-button {
+  position: absolute;
+  bottom: -38.5px;
+  right: 100px;
+
+  color: white;
+  background-color: orange;
+  // border: 1px solid rgb(32, 33, 39);
+  border-radius: 50%;
+
+  font-size: 40px;
+
+  padding: 17.5px 20px;
+}
+
+.new-contract-button:hover {
+  transform: scale(1.1);
+}
+
+.dashboard-container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .link-to {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.contract-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  width:100%;
+
+  .contract-card-content {
+    flex-grow: 1;
+    padding: 0 24px;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.4;
+    max-width: 650px;
+  }
+
+  small {
+    color: #999999;
+    font-weight: bold;
+  }
+}
+.chat-header{
+  display:flex;
+  justify-content:center;
+
+  .contract-link-to-new{
+    position:relative;
+    font-size: 10px;
+    height:15px;
+    background-color:#66ffff;
+    width:9%;
+    margin-left:20px;
+
+  }
+}
+.contract-link-to-new:hover{
+  text-decoration:none;
+}
+

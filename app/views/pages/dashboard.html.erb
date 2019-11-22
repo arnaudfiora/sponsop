@@ -5,3 +5,15 @@
 <% else %>
   <%= render 'shared/creator_dashboard' %>
 <% end %>
+
+
+  <div class="line-separator">
+    <div class="line"></div>
+  </div>
+
+
+<% if current_user.is_brand == true %>
+<%= render 'shared/brand_contracts' %>
+<% else %>
+<%= render 'shared/creator_contracts' %>
+<% end %>

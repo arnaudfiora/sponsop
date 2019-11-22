@@ -9,11 +9,9 @@
         <% @chat_rooms_brand.each do |chatroom| %>
 
             <div class="chatroom"  data-target-id="<%= chatroom.id %>" >
-              <img data-target-id="<%= chatroom.id %>" src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="avatar-large">
-              <p data-target-id="<%= chatroom.id %>" ><%= chatroom.name %></p>
-
+            <img data-target-id="<%= chatroom.id %>" src="<%= User.find_by(email: chatroom["email"])["avatar"] %>" alt="" class="avatar-large">
+            <p data-target-id="<%= chatroom.id %>" ><%= chatroom.name %></p>
             </div>
-
         <% end %>
 
       <% else %>
@@ -24,10 +22,9 @@
               <p><%= chatroom.user.first_name %></p>
             </div>
         <% end %>
-
       <% end %>
-
   </div>
+
 
   <div class="container-chatroom">
     <div class="container message-container">
