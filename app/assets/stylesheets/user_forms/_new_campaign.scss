@@ -1,0 +1,60 @@
+#new_campaign {
+  position: relative;
+  background: blue;
+  width: 50vw;
+  height: 75vh;
+}
+
+.channel-form-wrapper{
+  position: relative;
+}
+
+.channel-form-content.create-campaign{
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.channel-form-content.create-campaign.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.interest-wrapper {
+  width: 50vw;
+  height: 75vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+
+  .interest-wrapper-content {
+    width: 50%;
+    margin: 0 auto;
+
+    .select {
+      width: 300px;
+    }
+
+    h3 {
+      font-size: 24px;
+      text-align: center;
+      color: darkgrey;
+      margin: 15px 0px;
+      padding-top: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

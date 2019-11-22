@@ -1,0 +1,9 @@
+// Refresh the form of campaign with the intersts (doses)
+
+var interestList = (innerHTML) => {
+  const form = document.querySelector('.interest-wrapper')
+  console.log(form)
+  form.innerHTML = innerHTML
+}
+
+interestList("<%= j render 'campaign_interests/new' %>")

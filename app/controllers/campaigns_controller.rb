@@ -19,15 +19,19 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.new(campaign_params)
     @campaign.user = current_user
     if @campaign.save
-      flash[:notice] = "You successfully created the campaign '#{@campaign.name}'"
-      redirect_to dashboard_path
+      respond_to do |format|
+        flash[:notice] = "You successfully created the campaign '#{@campaign.name}'"
+        format.html { redirect_to new_campaign_path(@campaign) }
+        format.js
+      end
     else
       render :new
     end
   end
 
   def edit
-    set_campaign
+    @campaign_interest = CampaignInterest.new
+    @interests = Interest.all
     @campaign_photo = @campaign.photo
   end
 
@@ -58,7 +62,6 @@ class CampaignsController < ApplicationController
   def campaign_params
     params.require(:campaign).permit(:name, :period, :gender, :description, :title, :body, :photo, interest_ids: [], age_attributes: {})
   end
-
 
   def filter_results(campaign)
     first_results = first_filter(campaign)

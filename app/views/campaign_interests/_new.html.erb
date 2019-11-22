@@ -1,0 +1,33 @@
+<div class="interest-wrapper">
+  <div class="interest-wrapper-content">
+
+    <h3>What are you target consumers interested about?</h3>
+
+    <ul>
+      <% if !@campaign.interests.nil? %>
+        <% @campaign.interests.each do |interest| %>
+          <li><%= interest.name %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <div class="form-group">
+      <%= simple_form_for( CampaignInterest.new , url: campaign_campaign_interests_path([@campaign]), html: { method: :post }, remote: true ) do |f| %>
+          <div class="form-inline">
+            <div class="form-inputs form-inline">
+              <%= f.association :interest,
+                                label: false,
+                                include_blank: false %>
+            </div>
+            <div class="form-actions form-inline">
+              <%= f.submit "+", class: "btn btn-secondary ml-1" %>
+            </div>
+          </div>
+      <% end %>
+
+      <%= link_to 'Go to compaign', campaign_path(@campaign), class: 'btn btn-primary w-100 mt-2' %>
+
+    </div>
+
+  </div>
+</div>
