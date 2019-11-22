@@ -1,7 +1,7 @@
 class ContractsController < ApplicationController
   def index
     @contracts = Contract.where(id: UserContract.where(user_id: current_user.id).map(&:contract_id))
-    redirect_to dashboard_path
+    redirect_to dashboard_path(@contracts)
   end
 
   def show
@@ -16,8 +16,12 @@ class ContractsController < ApplicationController
 
   def create
     @campaign_id = params[:campaign]
+    @campaign = Campaign.find(@campaign_id)
     @contract = Contract.new
+    @contract[:photo] = @campaign['photo']
+    @contract[:campaign] = @campaign.name
     @contract[:name] = params[:name]
+    @contract[:date] = Date.today.to_s
     @contract[:description] = params[:description]
     chat_room_id = params[:chat_room_id].to_i
     @chat_room = ChatRoom.find(chat_room_id)

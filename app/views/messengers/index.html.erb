@@ -100,9 +100,8 @@
       <div class="row chat_room_content" style=" <%= 'display:none' unless i == 0  %>" id="chat_room-<%= chat_room.id  %>">
         <div class="col-sm-12 col-sm-offset-3">
           <!-- <p class="data-replaced">TEMP</p> -->
-          <div class="chat-header"><h4><%= chat_room.name %></h4></div>
-            <div class="contract">
-          <%= link_to "Send a contract", contracts_new_path(chat_room)  %>
+          <div class="chat-header">
+            <h4><%= chat_room.name %></h4>
           </div>
           <div class="messages">
             <% chat_room.messages.each do |message| %>
@@ -112,7 +111,8 @@
           <div id="create-message">
             <%= simple_form_for [ chat_room, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
               <%= f.input :content, label: false, input_html: { class: "message-input"} %>
-              <%= f.submit "Send", class: 'btn btn-primary mt-1 w-100' %>
+              <%= f.submit "Send message", class: 'btn btn-primary my-1 w-100' %>
+              <p><%= link_to "Create contract", contracts_new_path(chat_room), class: 'btn btn-secondary w-100'  %></p>
             <% end %>
           </div>
 

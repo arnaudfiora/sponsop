@@ -1,91 +1,76 @@
 .new-contract-button {
-position: absolute;
-bottom: -38.5px;
-right: 100px;
+  position: absolute;
+  bottom: -38.5px;
+  right: 100px;
 
-color: white;
-background-color: orange;
-// border: 1px solid rgb(32, 33, 39);
-border-radius: 50%;
+  color: white;
+  background-color: orange;
+  // border: 1px solid rgb(32, 33, 39);
+  border-radius: 50%;
 
-font-size: 40px;
+  font-size: 40px;
 
-padding: 17.5px 20px;
+  padding: 17.5px 20px;
 }
 
 .new-contract-button:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .dashboard-container {
-width: 900px;
-margin: 0 auto;
-padding-top: 20px;
-display: flex;
-justify-content: center;
-flex-wrap: wrap;
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
-.link-to {
-text-decoration: none;
-color: black;
+  .link-to {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .contract-card {
-// background-color: lightgrey;
-border-radius: 5px;
-border: 1px solid #212227;
-margin: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  width:100%;
 
-width: 400px;
-padding: 10px 20px;
+  .contract-card-content {
+    flex-grow: 1;
+    padding: 0 24px;
+  }
 
-text-align: center;
-color: #212227;
+  p {
+    margin: 0;
+    line-height: 1.4;
+    max-width: 650px;
+  }
 
-position: relative;
-
-.contract-card-content {
-color: black;
+  small {
+    color: #999999;
+    font-weight: bold;
+  }
 }
+.chat-header{
+  display:flex;
+  justify-content:center;
+
+  .contract-link-to-new{
+    position:relative;
+    font-size: 10px;
+    height:15px;
+    background-color:#66ffff;
+    width:9%;
+    margin-left:20px;
+
+  }
 }
-
-.contract-card:hover {
-box-shadow: 0 0 20px #212227;
+.contract-link-to-new:hover{
+  text-decoration:none;
 }
-
-.contract-card-actions {
-position: absolute;
-bottom: 2px;
-left: 50%;
-transform: translateX(-50%)
-}
-}
-
-.link-to.delete:hover {
-color: red;
-}
-
-.link-to.edit:hover {
-color: orange;
-}
-
-.line-separator {
-width: 100%;
-text-align: center;
-
-.line {
-display: inline-block;
-width: 90%;
-height: 1px;
-border-bottom: 1px solid $red;
-} }
-
-.accept-contract-form{
-text:black;
-}
-
-.button-contract-submit{
-  width:60%;
-}
-
 

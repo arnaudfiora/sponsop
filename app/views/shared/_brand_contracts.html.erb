@@ -3,25 +3,32 @@
 </div>
 
 <div class="dashboard-container">
-        <% @contracts.each_with_index do |contract, index| %>
-            <%= link_to contract_path(contract), class: 'link-to' do %>
-          <div class="contract-card">
-            <div class="contract-card-content">
-              <p> Contract number <%= index + 1 %></p>
-              <h3 style="font-size: 20px;"><%= contract.name %></h3>
-              <p><%= contract.description %></p>
-              <p><%= contract.address %></p>
-            </div>
-            <% end %>
-            <div class="contract-actions">
-            <% if contract.validated == "Confirmed"%>
-              <p style="font-weight: bold; color: green">Contract accepted</p>
-            <% elsif contract.validated == "Pending" %>
-              <p style="font-weight: bold; color: orange">Waiting for response</p>
-            <% else %>
-              <p style="font-weight: bold; color: red">Contract accepted</p>
-            <% end %>
-          </div>
-            </div>
-         <% end %>
+
+  <% @contracts.each_with_index do |contract, index| %>
+
+    <div class="contract-card">
+
+      <img src="<%= contract.users.where(is_brand: false).first.avatar  %>" class="avatar-large" alt="">
+
+      <div class="contract-card-content">
+        <p><small>Contract #<%= index + 1 %></small></p>
+        <p><strong><%= contract.users.where(is_brand: false).first.first_name %></strong></p>
+        <p><%= contract['campaign'] %> - <%= contract.date %></p>
+
+      </div>
+
+      <div class="contract-card-actions">
+        <% if contract.validated == "Confirmed"%>
+          <p style="font-weight: bold; color: green">Contract accepted</p>
+        <% elsif contract.validated == "Pending" %>
+          <p style="font-weight: bold; color: orange">Waiting for response</p>
+        <% else %>
+          <p style="font-weight: bold; color: red">Contract declined</p>
+        <% end %>
+      </div>
+
+    </div>
+
+  <% end %>
+
 </div>
