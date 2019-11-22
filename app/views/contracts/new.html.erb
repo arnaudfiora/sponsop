@@ -1,21 +1,61 @@
-<h1>New Contract</h1>
+<div class="new-contract-wrapper">
 
+  <div class="new-contract-container">
 
-<div class="form-contract-wrapper">
-  <div class="form-content form-contract-content">
-      <form action="/contracts" method="post">
-      <br>Name:<input type="string" name="name">
-      <br>Description:<input type="text" name="Description">
-      <br>Address:<input type="text" name="Address">
-      <br><select name="campaign" size="<%=  Campaign.all.count %>">
-        <%= @campaigns.each do |campaign| %>
-       <option value="<%= campaign.id %>"><%= campaign.name %></option>  %>
-        <% end %>
-        </select>
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
-      <input type="hidden" name="chat_room_id" value="<%= @chat_room.id %>"/>
-      <button class= " button-contract-submit"type="submit">Submit</button>
-      </form>
-      <%= link_to "Cancel", dashboard_path, class: "btn btn-danger w-30 my-2" %>
+    <div class="new-contract-banner">
+      <%= image_tag "default.png"%>
+    </div>
+
+    <div class="new-contract-content">
+      <div class="row">
+
+        <div class="col-4">
+          <div class="new-contract-invoice">
+            <h7>INVOICE 2019/4</h7>
+            <br>
+            <br>
+            <h6 style="color: rgb(30,126,165);"> SponsOP <br> BE0656.556.245</h6>
+            <br>
+            <h7>Cantersteen 12, <br> 1000 Bruxelles, <br> Belgium</h7>
+            <br>
+            <br>
+            <h7>IBAN : BE45 2345 5634 0678</h7>
+            <br>
+          </div>
+        </div>
+
+        <div class="col-8">
+            <div class="new-contract-form">
+              <p style="font-weight: bold">New contract for the campaign:</p>
+              <form action="/contracts" method="post">
+                <select name="campaign">
+                  <%= @campaigns.each do |campaign| %>
+                    <option value="<%= campaign.id %>"><%= campaign.name %></option>  %>
+                  <% end %>
+                </select>
+                <br><br>
+                <p style="font-weight: bold">Description of the offer:</p>
+                <textarea type="text" name="description" style="width:75%"></textarea>
+              <br>
+
+              <br>
+              <p>Thanks for your trust, it is a pleasure working with you.</p>
+              <p>Best regards,</p>
+              <p>The SponsOp Team</p>
+              <br>
+
+              <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"/>
+              <input type="hidden" name="chat_room_id" value="<%= @chat_room.id %>"/>
+              <button class="btn btn-primary w-100" type="submit" style="text-transform: capitalize">Submit</button>
+              </form>
+              <%= link_to "Cancel", dashboard_path, class: "btn btn-secondary w-100 my-2" %>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
+
 </div>
+
