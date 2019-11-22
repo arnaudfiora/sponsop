@@ -13,7 +13,6 @@ class ContractsController < ApplicationController
     @campaigns = Campaign.where(user: current_user)
   end
 
-
   def create
     @campaign_id = params[:campaign]
     @campaign = Campaign.find(@campaign_id)
@@ -36,14 +35,12 @@ class ContractsController < ApplicationController
     end
   end
 
-
   # private
   # def contract_params
   #   params.require(:contract).permit(:name, :address, :description)
   # end
 
-
-def edit
+  def edit
     @contract = Contract.find(params[:id])
   end
 
