@@ -15,10 +15,10 @@
   <!-- <p class="text-center">"<%= @channel.user.description %>"</p> -->
   <p><strong>What is <%= @channel.user.first_name %> looking for?</strong></p>
   <ul>
-    <li>3000$ to advertise your brand in a video (10sec ad)</li>
-    <li>1000$ for an instgram post</li>
-    <li>A ton of goodies to send to my believers, that's how I call them</li>
-    <li>A 5-year contract at a rate of 1 video/week</li>
+    <p>➤ 3000$ to advertise your brand in a video (10sec ad)</li>
+    <p>➤ 1000$ for an instgram post</li>
+    <p>➤ A ton of goodies to send to my believers, that's how I call them</li>
+    <p>➤ A 5-year contract at a rate of 1 video/week</li>
   </ul>
   <div class="w-100 text-center">
     <%= link_to "Send message", new_chat_room_path(@channel), class: "btn btn-primary text-center"  %>
@@ -66,7 +66,7 @@
       <div>
         <p class="segmentation-title">Gender</p>
         <ul>
-          <li><%= @channel.gender %></li>
+          <p>✓<%= @channel.gender %></p>
         </ul>
       </div>
       <div>
@@ -74,7 +74,7 @@
         <ul>
           <% @channel.age.attributes.each do |key, value| %>
             <% if value == true %>
-              <li><%= key %></li>
+              <p>✓<%= key %></p>
             <% end %>
           <% end %>
         </ul>
@@ -83,7 +83,7 @@
         <p class="segmentation-title">Interests</p>
         <ul>
           <% @channel.interests.each do |interest| %>
-            <li><%= interest.name %></li>
+            <p>✓<%= interest.name %></p>
           <% end %>
         </ul>
       </div>
